@@ -24,112 +24,28 @@
   <main id="work" class="wrap">
     <ul class="grid" role="list">
 
-      <!-- Tile 1 -->
+      <!-- Tile 1: Hazard Intelligence -->
       <li class="tile" role="listitem">
-        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-1" id="tab-1">
+        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-7" id="tab-7">
           <span class="tile-media">
-            <img src="assets/images/emergencyplan.webp" alt="NYC Emergency Plan Assistant — conversational preparedness interface" width="1200" height="750" loading="eager" decoding="async" />
+            <img src="assets/images/hazardintel.webp" alt="NYCEM Hazard Intelligence — real-time situational dashboard" width="1200" height="750" loading="eager" decoding="async" />
           </span>
           <span class="tile-head">
-            <span class="tile-kicker">NYC Emergency Plan Assistant</span>
-            <span class="tile-headline">Multilingual, agentic emergency preparedness — for every New Yorker</span>
-            <span class="tile-oneliner">A conversational tool that builds a personalized household emergency plan in your language.</span>
+            <span class="tile-kicker">Hazard Intelligence</span>
+            <span class="tile-headline">One live picture of every hazard facing the city</span>
+            <span class="tile-oneliner">A situational dashboard that unifies the city's real-time hazard feeds and daily briefings.</span>
             <span class="tile-more" aria-hidden="true">Read more<svg class="chev" viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </span>
         </button>
-        <div class="tile-panel" id="panel-1" role="region" aria-labelledby="tab-1">
+        <div class="tile-panel" id="panel-7" role="region" aria-labelledby="tab-7">
           <div class="tile-panel-inner">
-            <p class="tile-story">Most emergency-preparedness guidance is a static PDF almost nobody reads. This tool replaces it with a guided conversation: it asks about your household, housing, and needs, then generates a personalized, downloadable emergency plan. It works in dozens of languages — with the interface, the conversation, and the final PDF all translated, including right-to-left rendering for Arabic, Hebrew, and Urdu. Built on a React/TypeScript front end with an AWS Lambda + Bedrock back end, with prompt caching for fast, low-cost responses.</p>
-            <p class="tile-links"><a href="https://emergencyplanagent.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">emergencyplanagent.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+            <p class="tile-story">When a storm, heat wave, or blackout hits, the operating picture is scattered across a dozen agencies and feeds. This tool pulls them into one place — weather and street flooding, the power grid, travel times, air quality, and coastal and climate signals — as a live situational dashboard backed by automated daily briefings. A companion admin console runs the pipeline behind it: what gets generated, when each product sends, and to whom. Built serverless on AWS, with scheduled collectors polling NWS, NYISO, Con Edison / PSEG-LI, NYC DOT, and AirNow.</p>
+            <p class="tile-links"><a href="https://inteldash.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">inteldash.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-note">dashboard</span><span class="link-sep" aria-hidden="true">·</span><a href="https://hazardintel.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">hazardintel.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-note">admin console</span></p>
           </div>
         </div>
       </li>
 
-      <!-- Tile 2 -->
-      <li class="tile" role="listitem">
-        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-2" id="tab-2">
-          <span class="tile-media">
-            <img src="assets/images/procurement.webp" alt="Procurement Agent — internal NYCEM procurement drafting tool" width="1200" height="750" loading="eager" decoding="async" />
-          </span>
-          <span class="tile-head">
-            <span class="tile-kicker">Procurement Agent</span>
-            <span class="tile-headline">Guiding staff through emergency procurement, step by step</span>
-            <span class="tile-oneliner">An internal NYCEM tool that helps staff draft compliant procurement documents.</span>
-            <span class="tile-more" aria-hidden="true">Read more<svg class="chev" viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </span>
-        </button>
-        <div class="tile-panel" id="panel-2" role="region" aria-labelledby="tab-2">
-          <div class="tile-panel-inner">
-            <p class="tile-story">Emergency procurement is fast, high-stakes, and rule-bound — a hard combination for staff who don't do it daily. This internal prototype walks users through generating the documents an emergency procurement package needs, from vendor solicitation covers to scopes of work, with a shared review workflow and a built-in method evaluator that helps pick the right procurement path. It draws on live NYC data sources (M/WBE, Checkbook NYC) and is built on Bedrock, Lambda, API Gateway, and DynamoDB.</p>
-            <p class="tile-links"><a href="https://procurementagent.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">procurementagent.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-note">internal NYCEM tool</span></p>
-          </div>
-        </div>
-      </li>
-
-      <!-- Tile 3 -->
-      <li class="tile" role="listitem">
-        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-3" id="tab-3">
-          <span class="tile-media">
-            <img src="assets/images/translate.webp" alt="Document Translation Service — upload and email translation" width="1200" height="750" loading="eager" decoding="async" />
-          </span>
-          <span class="tile-head">
-            <span class="tile-kicker">Document Translation Service</span>
-            <span class="tile-headline">Send a document, get it back translated</span>
-            <span class="tile-oneliner">An email- and web-based service that translates documents and returns a clean PDF.</span>
-            <span class="tile-more" aria-hidden="true">Read more<svg class="chev" viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </span>
-        </button>
-        <div class="tile-panel" id="panel-3" role="region" aria-labelledby="tab-3">
-          <div class="tile-panel-inner">
-            <p class="tile-story">A lightweight translation service designed for real documents, not just text snippets. Send a file by email or upload it on the web, and it returns a formatted PDF in the target language — with currency conversion handled inline for invoices and financial documents. Built entirely serverless on Bedrock and Lambda, with cost tracking baked in.</p>
-            <p class="tile-links"><a href="https://translate.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">translate.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
-          </div>
-        </div>
-      </li>
-
-      <!-- Tile 4 -->
-      <li class="tile" role="listitem">
-        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-4" id="tab-4">
-          <span class="tile-media">
-            <img src="assets/images/travelreceipt.webp" alt="TravelReceipt — translate a receipt and convert its currency" width="1200" height="750" loading="eager" decoding="async" />
-          </span>
-          <span class="tile-head">
-            <span class="tile-kicker">TravelReceipt</span>
-            <span class="tile-headline">Turn a foreign receipt into something you can actually file</span>
-            <span class="tile-oneliner">Upload a receipt or invoice; get a translated PDF with currency conversion by email.</span>
-            <span class="tile-more" aria-hidden="true">Read more<svg class="chev" viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </span>
-        </button>
-        <div class="tile-panel" id="panel-4" role="region" aria-labelledby="tab-4">
-          <div class="tile-panel-inner">
-            <p class="tile-story">A small, public-facing product for anyone dealing with receipts in another language and currency — travelers, expense filers, small businesses. Upload the receipt and it emails back a translated PDF with the amounts converted. A focused consumer application built on the same serverless translation foundation, with a production payment flow.</p>
-            <p class="tile-links"><a href="https://travelreceipt.com" target="_blank" rel="noopener noreferrer">travelreceipt.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
-          </div>
-        </div>
-      </li>
-
-      <!-- Tile 5 -->
-      <li class="tile" role="listitem">
-        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-5" id="tab-5">
-          <span class="tile-media">
-            <img src="assets/images/snowcorps.webp" alt="SnowCorps — worker and admin platform for snow-removal coordination" width="1200" height="750" loading="eager" decoding="async" />
-          </span>
-          <span class="tile-head">
-            <span class="tile-kicker">SnowCorps</span>
-            <span class="tile-headline">Coordinating snow-clearing labor across the city</span>
-            <span class="tile-oneliner">A worker-and-admin platform for managing paid snow-removal at the intersection level.</span>
-            <span class="tile-more" aria-hidden="true">Read more<svg class="chev" viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </span>
-        </button>
-        <div class="tile-panel" id="panel-5" role="region" aria-labelledby="tab-5">
-          <div class="tile-panel-inner">
-            <p class="tile-story">A two-sided application for organizing snow response: a worker app where people claim intersections, document completed work, and get paid, paired with an admin portal for oversight and coordination. It tackles the logistics problem behind a familiar civic promise — that the sidewalks and crossings actually get cleared.</p>
-            <p class="tile-links"><a href="https://snowcorps.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">snowcorps.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-sep" aria-hidden="true">·</span><a href="https://admin.snowcorps.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">admin.snowcorps.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
-          </div>
-        </div>
-      </li>
-
-      <!-- Tile 6 -->
+      <!-- Tile 2: IAD 2.0 — Interagency Directory -->
       <li class="tile" role="listitem">
         <button class="tile-toggle" aria-expanded="false" aria-controls="panel-6" id="tab-6">
           <span class="tile-media">
@@ -150,26 +66,111 @@
         </div>
       </li>
 
-      <!-- Tile 7 -->
+      <!-- Tile 3: Procurement Agent -->
       <li class="tile" role="listitem">
-        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-7" id="tab-7">
+        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-2" id="tab-2">
           <span class="tile-media">
-            <img src="assets/images/hazardintel.webp" alt="NYCEM Hazard Intelligence — real-time situational dashboard" width="1200" height="750" loading="eager" decoding="async" />
+            <img src="assets/images/procurement.webp" alt="Procurement Agent — internal NYCEM procurement drafting tool" width="1200" height="750" loading="eager" decoding="async" />
           </span>
           <span class="tile-head">
-            <span class="tile-kicker">Hazard Intelligence</span>
-            <span class="tile-headline">One live picture of every hazard facing the city</span>
-            <span class="tile-oneliner">A situational dashboard that unifies the city's real-time hazard feeds and daily briefings.</span>
+            <span class="tile-kicker">Procurement Agent</span>
+            <span class="tile-headline">Guiding staff through emergency procurement, step by step</span>
+            <span class="tile-oneliner">An internal NYCEM tool that helps staff draft compliant procurement documents.</span>
             <span class="tile-more" aria-hidden="true">Read more<svg class="chev" viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </span>
         </button>
-        <div class="tile-panel" id="panel-7" role="region" aria-labelledby="tab-7">
+        <div class="tile-panel" id="panel-2" role="region" aria-labelledby="tab-2">
           <div class="tile-panel-inner">
-            <p class="tile-story">When a storm, heat wave, or blackout hits, the operating picture is scattered across a dozen agencies and feeds. This tool pulls them into one place — weather and street flooding, the power grid, travel times, air quality, and coastal and climate signals — as a live situational dashboard backed by automated daily briefings. A companion admin console runs the pipeline behind it: what gets generated, when each product sends, and to whom. Built serverless on AWS, with scheduled collectors polling NWS, NYISO, Con Edison / PSEG-LI, NYC DOT, and AirNow.</p>
-            <p class="tile-links"><a href="https://inteldash.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">inteldash.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-note">dashboard</span><span class="link-sep" aria-hidden="true">·</span><a href="https://hazardintel.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">hazardintel.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-note">admin console</span></p>
+            <p class="tile-story">Emergency procurement is fast, high-stakes, and rule-bound — a hard combination for staff who don't do it daily. This internal prototype walks users through generating the documents an emergency procurement package needs, from vendor solicitation covers to scopes of work, with a shared review workflow and a built-in method evaluator that helps pick the right procurement path. It draws on live NYC data sources (M/WBE, Checkbook NYC) and is built on Bedrock, Lambda, API Gateway, and DynamoDB.</p>
+            <p class="tile-links"><a href="https://procurementagent.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">procurementagent.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-note">internal NYCEM tool</span></p>
           </div>
         </div>
       </li>
+
+      <!-- Tile 4: NYC Emergency Plan Assistant -->
+      <li class="tile" role="listitem">
+        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-1" id="tab-1">
+          <span class="tile-media">
+            <img src="assets/images/emergencyplan.webp" alt="NYC Emergency Plan Assistant — conversational preparedness interface" width="1200" height="750" loading="eager" decoding="async" />
+          </span>
+          <span class="tile-head">
+            <span class="tile-kicker">NYC Emergency Plan Assistant</span>
+            <span class="tile-headline">Multilingual, agentic emergency preparedness — for every New Yorker</span>
+            <span class="tile-oneliner">A conversational tool that builds a personalized household emergency plan in your language.</span>
+            <span class="tile-more" aria-hidden="true">Read more<svg class="chev" viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+        </button>
+        <div class="tile-panel" id="panel-1" role="region" aria-labelledby="tab-1">
+          <div class="tile-panel-inner">
+            <p class="tile-story">Most emergency-preparedness guidance is a static PDF almost nobody reads. This tool replaces it with a guided conversation: it asks about your household, housing, and needs, then generates a personalized, downloadable emergency plan. It works in dozens of languages — with the interface, the conversation, and the final PDF all translated, including right-to-left rendering for Arabic, Hebrew, and Urdu. Built on a React/TypeScript front end with an AWS Lambda + Bedrock back end, with prompt caching for fast, low-cost responses.</p>
+            <p class="tile-links"><a href="https://emergencyplanagent.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">emergencyplanagent.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Tile 5: Document Translation Service -->
+      <li class="tile" role="listitem">
+        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-3" id="tab-3">
+          <span class="tile-media">
+            <img src="assets/images/translate.webp" alt="Document Translation Service — upload and email translation" width="1200" height="750" loading="eager" decoding="async" />
+          </span>
+          <span class="tile-head">
+            <span class="tile-kicker">Document Translation Service</span>
+            <span class="tile-headline">Send a document, get it back translated</span>
+            <span class="tile-oneliner">An email- and web-based service that translates documents and returns a clean PDF.</span>
+            <span class="tile-more" aria-hidden="true">Read more<svg class="chev" viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+        </button>
+        <div class="tile-panel" id="panel-3" role="region" aria-labelledby="tab-3">
+          <div class="tile-panel-inner">
+            <p class="tile-story">A lightweight translation service designed for real documents, not just text snippets. Send a file by email or upload it on the web, and it returns a formatted PDF in the target language — with currency conversion handled inline for invoices and financial documents. Built entirely serverless on Bedrock and Lambda, with cost tracking baked in.</p>
+            <p class="tile-links"><a href="https://translate.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">translate.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Tile 6: TravelReceipt -->
+      <li class="tile" role="listitem">
+        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-4" id="tab-4">
+          <span class="tile-media">
+            <img src="assets/images/travelreceipt.webp" alt="TravelReceipt — translate a receipt and convert its currency" width="1200" height="750" loading="eager" decoding="async" />
+          </span>
+          <span class="tile-head">
+            <span class="tile-kicker">TravelReceipt</span>
+            <span class="tile-headline">Turn a foreign receipt into something you can actually file</span>
+            <span class="tile-oneliner">Upload a receipt or invoice; get a translated PDF with currency conversion by email.</span>
+            <span class="tile-more" aria-hidden="true">Read more<svg class="chev" viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+        </button>
+        <div class="tile-panel" id="panel-4" role="region" aria-labelledby="tab-4">
+          <div class="tile-panel-inner">
+            <p class="tile-story">A small, public-facing product for anyone dealing with receipts in another language and currency — travelers, expense filers, small businesses. Upload the receipt and it emails back a translated PDF with the amounts converted. A focused consumer application built on the same serverless translation foundation, with a production payment flow.</p>
+            <p class="tile-links"><a href="https://travelreceipt.com" target="_blank" rel="noopener noreferrer">travelreceipt.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Tile 7: SnowCorps -->
+      <li class="tile" role="listitem">
+        <button class="tile-toggle" aria-expanded="false" aria-controls="panel-5" id="tab-5">
+          <span class="tile-media">
+            <img src="assets/images/snowcorps.webp" alt="SnowCorps — worker and admin platform for snow-removal coordination" width="1200" height="750" loading="eager" decoding="async" />
+          </span>
+          <span class="tile-head">
+            <span class="tile-kicker">SnowCorps</span>
+            <span class="tile-headline">Coordinating snow-clearing labor across the city</span>
+            <span class="tile-oneliner">A worker-and-admin platform for managing paid snow-removal at the intersection level.</span>
+            <span class="tile-more" aria-hidden="true">Read more<svg class="chev" viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+        </button>
+        <div class="tile-panel" id="panel-5" role="region" aria-labelledby="tab-5">
+          <div class="tile-panel-inner">
+            <p class="tile-story">A two-sided application for organizing snow response: a worker app where people claim intersections, document completed work, and get paid, paired with an admin portal for oversight and coordination. It tackles the logistics problem behind a familiar civic promise — that the sidewalks and crossings actually get cleared.</p>
+            <p class="tile-links"><a href="https://snowcorps.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">snowcorps.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-sep" aria-hidden="true">·</span><a href="https://admin.snowcorps.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">admin.snowcorps.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+          </div>
+        </div>
+      </li>
+
 
     </ul>
   </main>
