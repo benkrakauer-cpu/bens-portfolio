@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const EXE='/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+const PROXY=process.env.HTTPS_PROXY||'http://127.0.0.1:42213';
+const b = await chromium.launch({ executablePath: EXE, args:['--no-sandbox',`--proxy-server=${PROXY}`,'--ssl-version-max=tls1.2','--disable-http2'] });
+const ctx = await b.newContext({ viewport:{width:1440,height:1300}, deviceScaleFactor:1.5, ignoreHTTPSErrors:true, httpCredentials:{username:'portfolio',password:'BJKPortfolio'} });
+const p = await ctx.newPage();
+await p.goto('https://d3n3019f8cwaj.cloudfront.net/',{waitUntil:'networkidle',timeout:40000});
+await p.waitForTimeout(800);
+await p.screenshot({ path:'captures/live_final.png', fullPage:false });
+const kickers = await p.$$eval('.tile-kicker', els=>els.map(e=>e.textContent));
+console.log('kickers:', kickers.join(' | '));
+await b.close();

@@ -139,12 +139,13 @@ required the "labeled preview" or "placeholder" fallback.
 | 3 | Document Translation Service | `translate.webp` | **Real screenshot** | Public landing / upload screen |
 | 4 | TravelReceipt | `travelreceipt.webp` | **Real screenshot** | Public landing (upload + target language + pricing) |
 | 5 | SnowCorps | `snowcorps.webp` | **Real screenshot** | Admin **Demo Mode** dashboard (KPIs, live claims feed, borough breakdown) |
-| 6 | IAD 2.0 — Interagency Directory | `iad.webp` | **Real screenshot** | Branded sign-in screen (the directory itself sits behind a real email/password login that could not be passed) |
+| 6 | IAD 2.0 — Interagency Directory | `iad.webp` | **Real screenshot** | Authenticated directory dashboard — KPI cards, alert queue, and recently-updated contacts (seeded demo data; fictional names + 555 numbers) |
 | 7 | Hazard Intelligence (dashboard + admin) | `hazardintel.webp` | **Real screenshot** | Post-gate Situational Dashboard (`inteldash`) — briefing products, hazard outlook, 5-day forecast, live alert/grid panels |
 
-Note on #6: IAD 2.0 uses a genuine email+password login (not a shared password wall),
-so the honest, representative capture is its branded sign-in page. The screenshot is a
-real capture of the live app, not a mock.
+Note on #6: IAD 2.0 uses a genuine email+password login (not a shared password wall).
+Captured by signing in with an owner-provided demo credential; the directory shown is
+seeded demo data (fictional contact names, 555 phone numbers), consistent with the app's
+own "PROTOTYPE — NOT CLEARED FOR PII" banner.
 
 ## Infrastructure (created for this site only)
 
