@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowCloudFrontServicePrincipalReadOnly",
+      "Effect": "Allow",
+      "Principal": { "Service": "cloudfront.amazonaws.com" },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::portfolio-benjaminkrakauer-com/*",
+      "Condition": { "StringEquals": { "AWS:SourceArn": "arn:aws:cloudfront::212275623655:distribution/E2W79PKQYJZFQP" } }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "CallerReference": "portfolio-benjaminkrakauer-com-v1",
+  "Comment": "Selected Work portfolio - password gated (basic auth)",
+  "Enabled": true,
+  "DefaultRootObject": "index.html",
+  "PriceClass": "PriceClass_100",
+  "HttpVersion": "http2",
+  "IsIPV6Enabled": true,
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "s3-portfolio",
+        "DomainName": "portfolio-benjaminkrakauer-com.s3.us-east-1.amazonaws.com",
+        "OriginAccessControlId": "E3W0QCGSIMFA4I",
+        "S3OriginConfig": { "OriginAccessIdentity": "" },
+        "OriginShield": { "Enabled": false },
+        "ConnectionAttempts": 3,
+        "ConnectionTimeout": 10,
+        "CustomHeaders": { "Quantity": 0 }
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "s3-portfolio",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "Compress": true,
+    "CachePolicyId": "aaf1d696-d67a-4975-ae6f-214daa21df13",
+    "AllowedMethods": { "Quantity": 2, "Items": ["GET","HEAD"], "CachedMethods": { "Quantity": 2, "Items": ["GET","HEAD"] } },
+    "FunctionAssociations": { "Quantity": 1, "Items": [ { "EventType": "viewer-request", "FunctionARN": "arn:aws:cloudfront::212275623655:function/portfolio-basic-auth" } ] },
+    "LambdaFunctionAssociations": { "Quantity": 0 },
+    "FieldLevelEncryptionId": "",
+    "SmoothStreaming": false
+  },
+  "CacheBehaviors": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "PathPattern": "/assets/*",
+        "TargetOriginId": "s3-portfolio",
+        "ViewerProtocolPolicy": "redirect-to-https",
+        "Compress": true,
+        "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+        "AllowedMethods": { "Quantity": 2, "Items": ["GET","HEAD"], "CachedMethods": { "Quantity": 2, "Items": ["GET","HEAD"] } },
+        "FunctionAssociations": { "Quantity": 1, "Items": [ { "EventType": "viewer-request", "FunctionARN": "arn:aws:cloudfront::212275623655:function/portfolio-basic-auth" } ] },
+        "LambdaFunctionAssociations": { "Quantity": 0 },
+        "FieldLevelEncryptionId": "",
+        "SmoothStreaming": false
+      }
+    ]
+  },
+  "ViewerCertificate": { "CloudFrontDefaultCertificate": true },
+  "CustomErrorResponses": { "Quantity": 0 },
+  "Restrictions": { "GeoRestriction": { "RestrictionType": "none", "Quantity": 0 } },
+  "WebACLId": "",
+  "Logging": { "Enabled": false, "IncludeCookies": false, "Bucket": "", "Prefix": "" }
+}

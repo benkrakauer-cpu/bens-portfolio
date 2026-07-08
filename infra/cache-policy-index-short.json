@@ -1,0 +1,14 @@
+{
+  "Name": "portfolio-index-short",
+  "Comment": "Short TTL for index.html / root HTML",
+  "DefaultTTL": 60,
+  "MaxTTL": 300,
+  "MinTTL": 0,
+  "ParametersInCacheKeyAndForwardedToOrigin": {
+    "EnableAcceptEncodingGzip": true,
+    "EnableAcceptEncodingBrotli": true,
+    "HeadersConfig": { "HeaderBehavior": "none" },
+    "CookiesConfig": { "CookieBehavior": "none" },
+    "QueryStringsConfig": { "QueryStringBehavior": "none" }
+  }
+}

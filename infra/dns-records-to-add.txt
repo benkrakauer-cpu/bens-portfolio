@@ -1,0 +1,20 @@
+# Records to create in EXTERNAL DNS (GoDaddy registrar / Google DNS) for
+# portfolio.benjaminkrakauer.com.  benjaminkrakauer.com is NOT in Route 53,
+# so these must be added manually at the DNS host — not in AWS.
+
+# 1) ACM certificate validation (CNAME) — add first; lets the TLS cert issue.
+#    Host/Name:  _bd0dbfea47c49ee939cf8194f5595460.portfolio
+#    (full name: _bd0dbfea47c49ee939cf8194f5595460.portfolio.benjaminkrakauer.com)
+#    Type:       CNAME
+#    Value:      _0f7c0cafeff5e3cac3bf62b0cfa99b90.jkddzztszm.acm-validations.aws
+#    TTL:        1 hour (default is fine)
+
+# 2) The portfolio hostname (CNAME) — points the site at CloudFront.
+#    Host/Name:  portfolio
+#    (full name: portfolio.benjaminkrakauer.com)
+#    Type:       CNAME
+#    Value:      d3n3019f8cwaj.cloudfront.net
+#    TTL:        1 hour
+#
+# NOTE: record #2 only serves traffic AFTER the ACM cert is ISSUED and the
+# distribution has the alias + certificate attached (run: ./deploy.sh attach-domain).
