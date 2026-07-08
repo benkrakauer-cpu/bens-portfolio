@@ -1,6 +1,6 @@
 import { chromium } from 'playwright';
 const EXE='/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
-const b = await chromium.launch({ executablePath: EXE, args:['--no-sandbox','--proxy-server=http://127.0.0.1:42213','--ssl-version-max=tls1.2','--disable-http2'] });
+const b = await chromium.launch({ executablePath: EXE, args:['--no-sandbox',`--proxy-server=${process.env.HTTPS_PROXY || 'http://127.0.0.1:42213'}`,'--ssl-version-max=tls1.2','--disable-http2'] });
 const ctx = await b.newContext({ viewport:{width:1440,height:900}, deviceScaleFactor:1.5, ignoreHTTPSErrors:true, httpCredentials:{ username:'portfolio', password:'BJKPortfolio' } });
 const p = await ctx.newPage();
 const errs=[]; p.on('console',m=>{if(m.type()==='error')errs.push(m.text());});

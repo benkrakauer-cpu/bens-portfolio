@@ -58,7 +58,7 @@ async function run() {
     executablePath: EXE,
     args: [
       '--no-sandbox',
-      '--proxy-server=http://127.0.0.1:42213',
+      `--proxy-server=${process.env.HTTPS_PROXY || 'http://127.0.0.1:42213'}`,
       '--ssl-version-max=tls1.2',
       '--disable-http2',
     ],

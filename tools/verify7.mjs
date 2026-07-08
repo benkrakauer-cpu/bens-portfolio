@@ -1,0 +1,15 @@
+import { chromium } from 'playwright';
+const EXE='/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+const b = await chromium.launch({ executablePath: EXE, args:['--no-sandbox'] });
+const d = await b.newContext({ viewport:{width:1440,height:900}, deviceScaleFactor:1.5 });
+const p = await d.newPage();
+const errs=[]; p.on('console',m=>{if(m.type()==='error')errs.push(m.text());});
+await p.goto('http://127.0.0.1:8099/index.html',{waitUntil:'networkidle'});
+const tiles = await p.locator('.tile').count();
+const imgs = await p.$$eval('img', a=>a.map(i=>i.naturalWidth));
+await p.locator('#tab-7').click(); await p.waitForTimeout(600);
+const exp = await p.locator('#tab-7').getAttribute('aria-expanded');
+const linkCount = await p.locator('#panel-7 a').count();
+await p.screenshot({ path:'captures/site7_desktop.png', fullPage:true });
+console.log('tiles=',tiles,'| images=',imgs.join(','),'| tile7 expanded=',exp,'| tile7 links=',linkCount,'| console errors=',errs.length?errs:'none');
+await b.close();

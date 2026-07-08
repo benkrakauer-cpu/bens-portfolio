@@ -16,7 +16,7 @@ async function clickByText(page, text, timeout = 6000) {
 async function run() {
   const browser = await chromium.launch({
     executablePath: EXE,
-    args: ['--no-sandbox', '--proxy-server=http://127.0.0.1:42213', '--ssl-version-max=tls1.2', '--disable-http2'],
+    args: ['--no-sandbox', `--proxy-server=${process.env.HTTPS_PROXY || 'http://127.0.0.1:42213'}`, '--ssl-version-max=tls1.2', '--disable-http2'],
   });
 
   // 1. Emergency Plan — pass gate, choose English, reach the conversation.
