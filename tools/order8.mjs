@@ -1,0 +1,14 @@
+import { chromium } from 'playwright';
+const EXE='/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+const b = await chromium.launch({ executablePath: EXE, args:['--no-sandbox'] });
+const p = await (await b.newContext({viewport:{width:1440,height:1100},deviceScaleFactor:1.5})).newPage();
+const errs=[]; p.on('console',m=>{if(m.type()==='error')errs.push(m.text());});
+await p.goto('http://127.0.0.1:8099/index.html',{waitUntil:'networkidle'});
+const order = await p.$$eval('.tile-kicker', els=>els.map(e=>e.textContent));
+await p.locator('#tab-8').click(); await p.waitForTimeout(500);
+const exp = await p.locator('#tab-8').getAttribute('aria-expanded');
+const imgs = await p.$$eval('img', a=>a.map(i=>i.naturalWidth));
+await p.screenshot({ path:'captures/site8_desktop.png', fullPage:true });
+console.log('count=',order.length,'| order=',order.join(' | '));
+console.log('tile8 expanded=',exp,'| imgs=',imgs.join(','),'| errors=',errs.length?errs:'none');
+await b.close();

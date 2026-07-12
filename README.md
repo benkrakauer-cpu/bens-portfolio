@@ -1,6 +1,6 @@
 # Selected Work — portfolio.benjaminkrakauer.com
 
-A single-page, password-gated portfolio. Seven project tiles that expand in place
+A single-page, password-gated portfolio. Eight project tiles that expand in place
 (accordion) to reveal a longer story and live links. Static HTML/CSS/vanilla JS,
 served from S3 behind CloudFront, gated with an HTTP Basic Auth CloudFront Function.
 
@@ -141,6 +141,7 @@ required the "labeled preview" or "placeholder" fallback.
 | 5 | SnowCorps | `snowcorps.webp` | **Real screenshot** | Admin **Demo Mode** dashboard (KPIs, live claims feed, borough breakdown) |
 | 6 | IAD 2.0 — Interagency Directory | `iad.webp` | **Real screenshot** | Authenticated directory dashboard — KPI cards, alert queue, and recently-updated contacts (seeded demo data; fictional names + 555 numbers) |
 | 7 | Hazard Intelligence (dashboard + admin) | `hazardintel.webp` | **Real screenshot** | Post-gate Situational Dashboard (`inteldash`) — briefing products, hazard outlook, 5-day forecast, live alert/grid panels |
+| 8 | Onboarding Scheduler | `onboarding.webp` | **Real screenshot** | Post-gate "Generate Invitations" workflow — add new hires, build meetings, generate Outlook invites; left nav (Patterns, Meetings, Directory, Rooms) |
 
 Note on #6: IAD 2.0 uses a genuine email+password login (not a shared password wall).
 Captured by signing in with an owner-provided demo credential; the directory shown is
