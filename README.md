@@ -2,11 +2,11 @@
 
 A single-page, password-gated portfolio. Eight project tiles that expand in place
 (accordion) to reveal a longer story and live links. Static HTML/CSS/vanilla JS,
-served from S3 behind CloudFront, gated with an HTTP Basic Auth CloudFront Function.
+served from S3 behind CloudFront, gated with a single-password CloudFront Function.
 
 - **Live (CloudFront):** https://d3n3019f8cwaj.cloudfront.net/
 - **Custom domain (pending DNS):** https://portfolio.benjaminkrakauer.com/
-- **Gate:** username `portfolio`, password `BJKPortfolio`
+- **Gate:** password `BJKPortfolio` (password-only sign-in page — no username)
 
 ```
 src/
@@ -15,7 +15,7 @@ src/
   app.js                Accordion toggle (aria-expanded + inert, keyboard-friendly)
   assets/images/*.webp  One optimized screenshot per tile (~11–37 KB each)
 infra/
-  basic-auth.js                    CloudFront Function (viewer-request) — the gate
+  password-gate.js                 CloudFront Function (viewer-request) — the gate
   cloudfront-distribution.json     Distribution config used to create the CDN
   cache-policy-index-short.json    Short-TTL cache policy for index.html
   bucket-policy.json               S3 policy granting the distribution OAC read
@@ -30,7 +30,7 @@ deploy.sh               deploy | rotate | attach-domain | status | verify
 
 ```bash
 ./deploy.sh deploy     # sync src/ to S3 + invalidate CloudFront
-./deploy.sh verify     # 401 without creds, 200 with portfolio:BJKPortfolio
+./deploy.sh verify     # 401 (sign-in page) without cookie, 200 with pf_auth=BJKPortfolio
 ./deploy.sh status     # distribution / cert / function state
 ```
 
@@ -63,23 +63,30 @@ more links in `.tile-links`. Edit the text in place, then `./deploy.sh deploy`.
 
 ## Rotating the password
 
-The credential is a single constant at the top of `infra/basic-auth.js`:
+The password is a single constant at the top of `infra/password-gate.js`:
 
 ```js
-var EXPECTED_AUTH = 'Basic cG9ydGZvbGlvOkJKS1BvcnRmb2xpbw=='; // base64("portfolio:BJKPortfolio")
+var PASSWORD = 'BJKPortfolio';   // keep it URL/cookie-safe — letters/digits
 ```
 
-1. Compute the new value: `printf 'portfolio:NEWPASSWORD' | base64`
-2. Paste it into `EXPECTED_AUTH`.
-3. Re-publish the function: `./deploy.sh rotate` (allow ~1 min to propagate, then
-   `./deploy.sh verify`).
+1. Change `PASSWORD` to the new value.
+2. Re-publish the function: `./deploy.sh rotate` (allow ~1 min to propagate, then
+   `./deploy.sh verify`). Visitors with the old password cookie will be prompted again.
+
+### How the gate works
+
+The function runs on every viewer request. If the request carries a `pf_auth`
+cookie equal to `PASSWORD`, it passes through to the site; otherwise it returns a
+styled **password-only** sign-in page (HTTP 401). Submitting the password stores it
+in the `pf_auth` cookie (7-day expiry) and reloads. The password lives only in the
+function code — it is never shipped in the site's own JS.
 
 ### This gate is NOT real security
 
-The password is embedded in the CloudFront Function's code and is trivially
-recoverable by anyone determined — it only keeps casual visitors out. Nothing
-sensitive lives on this site; it only links out to the apps, each of which has its
-own gate. Do not put anything private here.
+The password is embedded in the CloudFront Function's code, and the `pf_auth`
+cookie holds it in plain text — both are trivially recoverable by anyone determined.
+It only keeps casual visitors out. Nothing sensitive lives on this site; it only
+links out to the apps, each of which has its own gate. Do not put anything private here.
 
 ## DNS records the owner must add (external — GoDaddy / Google, not AWS)
 

@@ -22,8 +22,7 @@ FUNCTION_NAME="portfolio-basic-auth"
 CERT_ARN="arn:aws:acm:us-east-1:212275623655:certificate/c89ec742-980d-4c93-9c8f-d8e5844234c8"
 CUSTOM_DOMAIN="portfolio.benjaminkrakauer.com"
 SRC_DIR="src"
-AUTH_USER="portfolio"
-AUTH_PASS="BJKPortfolio"   # for `verify` only; the real gate lives in infra/basic-auth.js
+AUTH_PASS="BJKPortfolio"   # for `verify` only; the real gate lives in infra/password-gate.js
 
 export AWS_DEFAULT_REGION="$REGION"
 CMD="${1:-deploy}"
@@ -45,11 +44,11 @@ deploy() {
 }
 
 rotate() {
-  echo ">> Re-publishing $FUNCTION_NAME from infra/basic-auth.js ..."
+  echo ">> Re-publishing $FUNCTION_NAME from infra/password-gate.js ..."
   ETAG=$(aws cloudfront describe-function --name "$FUNCTION_NAME" --query 'ETag' --output text)
   aws cloudfront update-function --name "$FUNCTION_NAME" \
-    --function-config Comment="Basic auth gate for portfolio site",Runtime="cloudfront-js-2.0" \
-    --function-code "fileb://infra/basic-auth.js" --if-match "$ETAG" >/dev/null
+    --function-config Comment="Password gate for portfolio site",Runtime="cloudfront-js-2.0" \
+    --function-code "fileb://infra/password-gate.js" --if-match "$ETAG" >/dev/null
   ETAG=$(aws cloudfront describe-function --name "$FUNCTION_NAME" --query 'ETag' --output text)
   aws cloudfront publish-function --name "$FUNCTION_NAME" --if-match "$ETAG" >/dev/null
   echo ">> Published. Allow a minute for propagation, then: ./deploy.sh verify"
@@ -101,12 +100,12 @@ status() {
 }
 
 verify() {
-  echo "-- no creds (expect 401) --"
-  curl -sS -o /dev/null -w "  status=%{http_code}\n" "https://$DIST_DOMAIN/"
-  echo "-- wrong creds (expect 401) --"
-  curl -sS -o /dev/null -w "  status=%{http_code}\n" -u "$AUTH_USER:nope" "https://$DIST_DOMAIN/"
-  echo "-- correct creds (expect 200) --"
-  curl -sS -o /dev/null -w "  status=%{http_code} type=%{content_type}\n" -u "$AUTH_USER:$AUTH_PASS" "https://$DIST_DOMAIN/"
+  echo "-- no cookie (expect 401, sign-in page) --"
+  curl -sS -o /dev/null -w "  status=%{http_code} type=%{content_type}\n" "https://$DIST_DOMAIN/"
+  echo "-- wrong password cookie (expect 401) --"
+  curl -sS -o /dev/null -w "  status=%{http_code}\n" --cookie "pf_auth=nope" "https://$DIST_DOMAIN/"
+  echo "-- correct password cookie (expect 200) --"
+  curl -sS -o /dev/null -w "  status=%{http_code} type=%{content_type}\n" --cookie "pf_auth=$AUTH_PASS" "https://$DIST_DOMAIN/"
 }
 
 case "$CMD" in
