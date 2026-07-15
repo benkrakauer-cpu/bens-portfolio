@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hazard Intelligence — Selected Work</title>
+  <meta name="description" content="Inside NYCEM Hazard Intelligence — situational dashboard, briefing PDF, and operations console." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf8f4'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' font-family='Georgia,serif' fill='%23b0762a'%3ES%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="detail.css" />
+</head>
+<body>
+  <a class="skip-link" href="#views">Skip to screens</a>
+
+  <header class="site-header detail-header">
+    <div class="wrap">
+      <a class="back-link" href="index.html">← Selected Work</a>
+      <span class="detail-kicker">Hazard Intelligence</span>
+      <h1 class="site-title">One live picture of every hazard facing the city</h1>
+      <hr class="title-rule" aria-hidden="true" />
+      <p class="site-tagline">A real-time situational dashboard and an operations console that pull the city's hazard feeds — weather, flooding, the power grid, travel, and air quality — into one place, and turn them into scheduled briefings. A tour of the screens, the PDF product, and the admin side that runs it.</p>
+      <p class="detail-links">
+        <a href="https://inteldash.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">inteldash.benjaminkrakauer.com</a><span class="link-note">dashboard</span>
+        <span aria-hidden="true">·</span>
+        <a href="https://hazardintel.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">hazardintel.benjaminkrakauer.com</a><span class="link-note">admin console</span>
+        <span class="detail-count">· 10 views</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="views" class="wrap">
+    <ul class="subgrid" role="list">
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/hazard/hz-dashboard.webp" data-caption="Situational Dashboard">
+          <img src="assets/hazard/hz-dashboard.webp" alt="Situational dashboard with briefing products, hazard outlook, and forecast" width="1500" height="937" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Situational Dashboard</h2>
+          <p class="subtile-desc">The at-a-glance operating picture: the day's briefing products, the active hazard outlook, and a five-day forecast on one screen. It auto-refreshes every 90 seconds from live feeds — NWS, NYISO, Con&nbsp;Edison / PSEG-LI, NYC&nbsp;DOT, and AirNow — and serves as the landing view for the whole tool.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/hazard/hz-alerts.webp" data-caption="Real-Time Hazard Alerts">
+          <img src="assets/hazard/hz-alerts.webp" alt="Grid of live hazard alerts across the city" width="1500" height="937" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Real-Time Hazard Alerts</h2>
+          <p class="subtile-desc">A live board of active disruptions — power outages, transit and ferry suspensions, air-quality and weather advisories, and IPAWS/WEA messages. Each card is produced by a real-time collector that polls its source on a fixed interval and flags anything that crosses a defined threshold.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/hazard/hz-grid.webp" data-caption="Power Grid & Outages">
+          <img src="assets/hazard/hz-grid.webp" alt="Power grid and outages detail with borough breakdown and load curve" width="1500" height="937" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Power Grid &amp; Outages</h2>
+          <p class="subtile-desc">A focused view of electric-grid conditions: Con&nbsp;Edison and PSEG-LI customer outages by borough, an outages-over-time chart, and NYISO system load versus forecast. It's assembled from utility outage feeds and the NYISO real-time load API.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/hazard/hz-briefing.webp" data-caption="Morning Daily Briefing (7-page PDF)" data-pdf="assets/hazard/morning-daily-briefing.pdf">
+          <span class="kind">PDF</span>
+          <img src="assets/hazard/hz-briefing.webp" alt="First page of the multi-page Hazard Briefing PDF" width="1000" height="1576" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Morning Daily Briefing <span aria-hidden="true">·</span> PDF product</h2>
+          <p class="subtile-desc">The flagship output: a multi-page PDF covering today's posture, the seven-day hazard outlook, current conditions, active products, and national-center outlooks. It's generated on a schedule by a Lambda that composes the synthesis prose on AWS&nbsp;Bedrock and renders the document; the dashboard links straight to the day's file. <a href="assets/hazard/morning-daily-briefing.pdf" target="_blank" rel="noopener">Open the PDF →</a></p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/hazard/hz-admin-status.webp" data-caption="Admin — System Status & Control">
+          <img src="assets/hazard/hz-admin-status.webp" alt="Admin system status and control panel" width="1500" height="937" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Admin — System Status &amp; Control</h2>
+          <p class="subtile-desc">The operator's home screen: pipeline state (enabled / send mode), the last and next scheduled runs, recently fired products, and per-product schedules. It's the control panel that governs what the tool generates and when.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/hazard/hz-admin-generation.webp" data-caption="Admin — Generation">
+          <img src="assets/hazard/hz-admin-generation.webp" alt="Admin generation screen for building and sending products on demand" width="1500" height="937" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Admin — Generation</h2>
+          <p class="subtile-desc">On-demand generation: build and send any product immediately, regenerate a briefing, or target specific products to specific people. This is where an operator compiles something outside the normal schedule and reviews it before it goes out.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/hazard/hz-admin-alerts.webp" data-caption="Admin — Alerts Engine">
+          <img src="assets/hazard/hz-admin-alerts.webp" alt="Admin alerts engine configuration and watched conditions" width="1500" height="937" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Admin — Alerts Engine</h2>
+          <p class="subtile-desc">The configuration behind the real-time alerts: the engine mode, its thresholds, and the running list of conditions it watches — outages, service suspensions, air quality, seismic events, and IPAWS/WEA. It decides which real-world events rise to the level of an alert.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/hazard/hz-admin-distribution.webp" data-caption="Admin — Distribution">
+          <img src="assets/hazard/hz-admin-distribution.webp" alt="Admin distribution list with per-recipient product subscriptions" width="1500" height="937" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Admin — Distribution</h2>
+          <p class="subtile-desc">The recipient and subscription manager: who receives which products, on what schedule (6&nbsp;AM / 4&nbsp;PM / instant), and through which channel. Subscriptions are toggled per person and per product, so a briefing only reaches the people who need it.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/hazard/hz-admin-grid.webp" data-caption="Admin — Grid Conditions & Reports">
+          <img src="assets/hazard/hz-admin-grid.webp" alt="Admin grid conditions with NYISO load curve and downloadable report" width="1500" height="937" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Admin — Grid Conditions &amp; Reports</h2>
+          <p class="subtile-desc">The grid product tab: real-time NYISO electricity load with today's curve against forecast, plus a downloadable grid-conditions PDF and email send. It turns the raw load and outage feeds into a shareable operational report.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/hazard/hz-admin-history.webp" data-caption="Admin — Activity Log & History">
+          <img src="assets/hazard/hz-admin-history.webp" alt="Admin product activity log with recipients, timestamps, and status" width="1500" height="937" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Admin — Activity Log &amp; History</h2>
+          <p class="subtile-desc">A full audit trail of every product generated and sent — name, timestamp, recipients, and status. It gives operators a record of exactly what went out, to whom, and when, and supports backfilling missed runs from the logs.</p>
+        </div>
+      </li>
+
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><p><a class="back-link" href="index.html" style="margin:0">← Back to Selected Work</a></p></div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+    <div class="lb-bar">
+      <span class="lb-caption"></span>
+      <div class="lb-actions">
+        <a class="lb-btn lb-download" hidden target="_blank" rel="noopener">↓ Download PDF</a>
+        <button class="lb-btn lb-close" type="button">✕ Close</button>
+      </div>
+    </div>
+    <div class="lb-stage">
+      <button class="lb-nav prev" type="button" aria-label="Previous screen">‹</button>
+      <img class="lb-img" alt="" />
+      <button class="lb-nav next" type="button" aria-label="Next screen">›</button>
+    </div>
+  </div>
+
+  <script src="detail.js"></script>
+</body>
+</html>

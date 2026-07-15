@@ -29,14 +29,15 @@ CMD="${1:-deploy}"
 
 deploy() {
   echo ">> Syncing $SRC_DIR/ to s3://$BUCKET ..."
-  aws s3 cp "$SRC_DIR/index.html" "s3://$BUCKET/index.html" \
+  # 1) assets (images, hazard screenshots, PDFs) — long, immutable cache; content-type auto-detected
+  aws s3 sync "$SRC_DIR/assets/" "s3://$BUCKET/assets/" \
+    --cache-control "public,max-age=31536000,immutable"
+  # 2) CSS + JS — moderate cache (invalidated on deploy)
+  aws s3 sync "$SRC_DIR/" "s3://$BUCKET/" --exclude "*" --include "*.css" --include "*.js" \
+    --cache-control "public,max-age=300"
+  # 3) HTML (home + per-app detail pages) — short cache, explicit content-type
+  aws s3 sync "$SRC_DIR/" "s3://$BUCKET/" --exclude "*" --include "*.html" \
     --content-type "text/html; charset=utf-8" --cache-control "public,max-age=60,must-revalidate"
-  aws s3 cp "$SRC_DIR/styles.css" "s3://$BUCKET/styles.css" \
-    --content-type "text/css; charset=utf-8" --cache-control "public,max-age=300"
-  aws s3 cp "$SRC_DIR/app.js" "s3://$BUCKET/app.js" \
-    --content-type "application/javascript; charset=utf-8" --cache-control "public,max-age=300"
-  aws s3 cp "$SRC_DIR/assets/images/" "s3://$BUCKET/assets/images/" --recursive \
-    --content-type "image/webp" --cache-control "public,max-age=31536000,immutable"
   echo ">> Invalidating CloudFront ..."
   aws cloudfront create-invalidation --distribution-id "$DIST_ID" --paths "/*" \
     --query 'Invalidation.{Id:Id,Status:Status}' --output table
