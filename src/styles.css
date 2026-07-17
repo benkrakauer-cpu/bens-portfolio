@@ -97,6 +97,20 @@ body {
   border-radius: var(--radius);
 }
 
+/* Link tiles (click the whole card → detail page) */
+.tile-link {
+  display: flex; flex-direction: column; height: 100%;
+  text-decoration: none; color: inherit;
+}
+.tile-link:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; border-radius: var(--radius); }
+.tile-go {
+  margin-top: auto; padding-top: 10px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 700; color: var(--accent-ink);
+}
+.chev-r { transition: transform .2s ease; }
+.tile-link:hover .chev-r { transform: translateX(3px); }
+
 .tile-media {
   display: block; width: 100%; aspect-ratio: 16 / 10; overflow: hidden;
   background: var(--line-soft);
