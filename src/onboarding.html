@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Onboarding Scheduler — Selected Work</title>
+  <meta name="description" content="Inside Onboarding Scheduler — screens, products, and how it's built." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf8f4'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' font-family='Georgia,serif' fill='%23b0762a'%3ES%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="detail.css" />
+</head>
+<body>
+  <a class="skip-link" href="#views">Skip to screens</a>
+
+  <header class="site-header detail-header">
+    <div class="wrap">
+      <a class="back-link" href="index.html">← Selected Work</a>
+      <span class="detail-kicker">Onboarding Scheduler</span>
+      <h1 class="site-title">Booking a new hire's first-week meetings, without the busywork</h1>
+      <hr class="title-rule" aria-hidden="true" />
+      <p class="site-tagline">The internal HCM tool that prepares a new hire's onboarding meetings and hands them to Outlook — the system never sends anything itself. A look at the build flow and the reusable pieces behind it.</p>
+      <p class="detail-links"><a href="https://onboardingscheduler.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">onboardingscheduler.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-note">internal NYCEM tool</span><span class="detail-count">· 5 views</span></p>
+    </div>
+  </header>
+
+  <main id="views" class="wrap">
+    <ul class="subgrid" role="list">
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/onboarding/ob-generate.webp" data-caption="Generate Invitations">
+          <img src="assets/onboarding/ob-generate.webp" alt="Generate invitations" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Generate Invitations</h2>
+          <p class="subtile-desc">The three-step build: add the new hire(s), assemble the meetings manually or from a saved pattern, then validate and generate. The whole flow is designed so a person always reviews and sends from their own Outlook.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/onboarding/ob-build.webp" data-caption="Building a Meeting Set">
+          <img src="assets/onboarding/ob-build.webp" alt="Building a meeting set" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Building a Meeting Set</h2>
+          <p class="subtile-desc">With a hire added and meetings queued, the tool assembles the batch — attendees, times, rooms, and descriptions — before generating, flagging NYC holidays and weekends for the organizer to acknowledge.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/onboarding/ob-meetings.webp" data-caption="Meeting Templates">
+          <img src="assets/onboarding/ob-meetings.webp" alt="Meeting templates" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Meeting Templates</h2>
+          <p class="subtile-desc">Reusable meeting templates — HCM Orientation, IT Orientation, Lunch Break, Security Orientation, Supervisor Meet &amp; Greet — with durations and optional flags. They're the building blocks a pattern strings together.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/onboarding/ob-directory.webp" data-caption="Directory">
+          <img src="assets/onboarding/ob-directory.webp" alt="Directory" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Directory</h2>
+          <p class="subtile-desc">The people and distribution directory the tool draws attendees from, so meetings are populated with the right names instead of retyped addresses each time.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/onboarding/ob-rooms.webp" data-caption="Rooms">
+          <img src="assets/onboarding/ob-rooms.webp" alt="Rooms" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Rooms</h2>
+          <p class="subtile-desc">The room list used when building meetings — conference rooms, the Situation Room, Press Briefing Room, Training Room — so an invitation books a real place, consistently, across every hire.</p>
+        </div>
+      </li>
+
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><p><a class="back-link" href="index.html" style="margin:0">← Back to Selected Work</a></p></div>
+  </footer>
+
+  <div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+    <div class="lb-bar">
+      <span class="lb-caption"></span>
+      <div class="lb-actions">
+        <a class="lb-btn lb-download" hidden target="_blank" rel="noopener">↓ Download PDF</a>
+        <button class="lb-btn lb-close" type="button">✕ Close</button>
+      </div>
+    </div>
+    <div class="lb-stage">
+      <button class="lb-nav prev" type="button" aria-label="Previous screen">‹</button>
+      <img class="lb-img" alt="" />
+      <button class="lb-nav next" type="button" aria-label="Next screen">›</button>
+    </div>
+  </div>
+
+  <script src="detail.js"></script>
+</body>
+</html>

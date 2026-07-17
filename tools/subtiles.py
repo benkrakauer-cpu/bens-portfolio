@@ -12,6 +12,22 @@ TAGLINES = {
  'snowcorps':
    ("Two sides of one snow-response platform: a mobile worker app for claiming intersections and getting paid, and an admin console for running a "
     "storm event and approving the work. Shown in Demo Mode with seeded data."),
+ 'emergency-plan':
+   ("A guided, multilingual conversation that turns emergency-preparedness guidance into a personalized household plan — in the user's own language, "
+    "with right-to-left rendering where needed. Built on a React/TypeScript front end with an AWS Lambda + Bedrock back end and prompt caching."),
+ 'onboarding':
+   ("The internal HCM tool that prepares a new hire's onboarding meetings and hands them to Outlook — the system never sends anything itself. "
+    "A look at the build flow and the reusable pieces behind it."),
+ 'travelreceipt':
+   ("A focused consumer product: upload a receipt or invoice in any language and currency, and get back a translated PDF with the amounts converted, "
+    "emailed in about a minute. Built on the same serverless translation foundation, with a production payment flow."),
+ 'document-translation':
+   ("The email- and web-based translation service behind TravelReceipt: send a document, get back a formatted PDF in the target language, with "
+    "currency conversion handled inline for financial documents. Serverless on Bedrock and Lambda."),
+ 'procurement':
+   ("Emergency procurement is fast, high-stakes, and rule-bound. Procurement Agent walks staff through the documents an emergency package needs — "
+    "scopes of work, emergency justifications, market solicitations — with tools to pick the right method and check live NYC data. "
+    "Built on Bedrock, Lambda, API Gateway, and DynamoDB."),
 }
 
 SUBTILES = {
@@ -98,5 +114,68 @@ SUBTILES = {
      "The roster: every worker with borough, tier, verification, approvals, and earnings. Coordinators manage who's active and see how they're performing."),
    T('assets/snowcorps/sc-admin-intersections.webp','SnowCorps admin intersections','Admin — Intersections',
      "The master intersection map and list with priority, status, and times-cleared. Admins add intersections and tune priorities so labor flows where it's needed most."),
+ ],
+
+ 'emergency-plan': [
+   T('assets/emergency/ep-choose.webp','Choose your experience','Choose Your Experience',
+     "The entry point: pick the standard English assistant or the translation-enabled multilingual version. One conversational tool, two front doors."),
+   T('assets/emergency/ep-conversation.webp','Guided conversation','Guided Conversation',
+     "The assistant opens by explaining what it will do and offers to begin. Instead of a static PDF, preparedness starts as a plain-language chat that anyone can follow — and you can answer in any language."),
+   T('assets/emergency/ep-intake.webp','Household intake','Household Intake',
+     "Structured questions capture the details a good plan depends on: household size, each person's age range, special or functional needs, and pets. These answers drive what the generated plan recommends."),
+   T('assets/emergency/ep-languages.webp','Language selection','Language Selection',
+     "The multilingual version opens with a searchable language picker spanning dozens of languages. The interface, the conversation, and the final PDF are all rendered in the chosen language."),
+   T('assets/emergency/ep-rtl.webp','Right-to-left rendering','Right-to-Left Rendering',
+     "Full right-to-left support for Arabic, Hebrew, and Urdu — the layout mirrors and the conversation reads naturally, not machine-translated text bolted onto a left-to-right shell."),
+ ],
+
+ 'onboarding': [
+   T('assets/onboarding/ob-generate.webp','Generate invitations','Generate Invitations',
+     "The three-step build: add the new hire(s), assemble the meetings manually or from a saved pattern, then validate and generate. The whole flow is designed so a person always reviews and sends from their own Outlook."),
+   T('assets/onboarding/ob-build.webp','Building a meeting set','Building a Meeting Set',
+     "With a hire added and meetings queued, the tool assembles the batch — attendees, times, rooms, and descriptions — before generating, flagging NYC holidays and weekends for the organizer to acknowledge."),
+   T('assets/onboarding/ob-meetings.webp','Meeting templates','Meeting Templates',
+     "Reusable meeting templates — HCM Orientation, IT Orientation, Lunch Break, Security Orientation, Supervisor Meet &amp; Greet — with durations and optional flags. They're the building blocks a pattern strings together."),
+   T('assets/onboarding/ob-directory.webp','Directory','Directory',
+     "The people and distribution directory the tool draws attendees from, so meetings are populated with the right names instead of retyped addresses each time."),
+   T('assets/onboarding/ob-rooms.webp','Rooms','Rooms',
+     "The room list used when building meetings — conference rooms, the Situation Room, Press Briefing Room, Training Room — so an invitation books a real place, consistently, across every hire."),
+ ],
+
+ 'travelreceipt': [
+   T('assets/travelreceipt/tr-landing.webp','TravelReceipt landing and upload','Upload &amp; Landing',
+     "The public landing and upload: drop a file or snap a photo of a receipt, and the product takes it from there. The pitch is deliberately narrow — receipts and invoices, translated and currency-converted."),
+   T('assets/travelreceipt/tr-selected.webp','Language, currency and price','Language, Currency &amp; Price',
+     "Pick one or more target languages and the currency to convert into; the price updates live and the flow is ready to continue to payment. A real, priced transaction — not a demo."),
+   T('assets/travelreceipt/tr-full.webp','How TravelReceipt works','How It Works',
+     "The full page walks through the three steps — upload, choose language and currency, receive the translated PDF by email in about 60 seconds — with the supported formats and the delivery promise."),
+ ],
+
+ 'document-translation': [
+   T('assets/document-translation/dt-landing.webp','Document translation landing','Upload &amp; Landing',
+     "The web entry point: drop a document (images, PDF, Word, Excel, text) and choose where it's going. The same engine also accepts documents by email."),
+   T('assets/document-translation/dt-selected.webp','Target language selection','Target Languages',
+     "Select one or more target languages — with a search box spanning far more than the visible chips — and the service prepares a professional translated PDF for each."),
+   T('assets/document-translation/dt-full.webp','Translation and currency conversion','Translation + Currency Conversion',
+     "The full landing lays out the value: professional document translation with automatic currency conversion to USD, built for international receipts, invoices, and contracts."),
+ ],
+
+ 'procurement': [
+   T('assets/procurement/pa-home.webp','Procurement Agent home','Three Ways In',
+     "The home offers the three things staff actually need to do — build a scope of work, run an emergency procurement, or solicit the market — plus quick tools. It meets people at the task, not a blank document."),
+   T('assets/procurement/pa-sow-category.webp','Scope of work category','Scope of Work — Category',
+     "Building a scope starts by naming the buy and picking a category — goods, standard or professional services, construction, human services. The category shapes the questions and the template that follow."),
+   T('assets/procurement/pa-sow-interview.webp','Scope of work guided interview','Scope of Work — Guided Interview',
+     "Instead of a blank Word doc, the tool interviews the user in plain language — “what does success look like when this contract is done?” — and keeps a running summary of what you've told it. Those answers become an editable draft SOW."),
+   T('assets/procurement/pa-emergency.webp','Emergency procurement','Emergency Procurement',
+     "The emergency path skips straight to the emergency-procurement interview, picking the closest type so a package can be assembled fast when there's an unforeseen danger to life, safety, or property."),
+   T('assets/procurement/pa-solicit.webp','Solicit the market','Solicit the Market',
+     "Market-solicitation outreach: generate an RFI (market research) or an RFEI (expressions of interest), then refine and distribute the documents. It rounds out the package once the scope is drafted."),
+   T('assets/procurement/pa-method.webp','Method evaluator','Method Evaluator',
+     "A guided evaluator that recommends the right procurement method: a few high-level questions — estimated value, what's being procured, whether specs can be made definite — mapped against the PPB rules, so staff pick a defensible path."),
+   T('assets/procurement/pa-mwbe.webp','M/WBE vendor search','M/WBE Vendor Search',
+     "A lookup for City-certified M/WBE vendors, usable on its own without starting a procurement — so staff can find certified minority- and women-owned businesses to include."),
+   T('assets/procurement/pa-contracts.webp','Prior contracts search','Prior Contracts Search',
+     "A search over similar past NYC contracts — describe what you're procuring and find precedents to price and scope against, drawing on live NYC data sources like Checkbook NYC."),
  ],
 }

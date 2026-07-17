@@ -155,6 +155,27 @@ Captured by signing in with an owner-provided demo credential; the directory sho
 seeded demo data (fictional contact names, 555 phone numbers), consistent with the app's
 own "PROTOTYPE — NOT CLEARED FOR PII" banner.
 
+
+## Per-app detail pages (drill-downs)
+
+Each home tile links to a detail page (`<slug>.html`) with a grid of sub-tiles —
+one screenshot each, a 2-3 sentence description, expanding to a full-screen
+lightbox. All pages are generated from one data model:
+
+- `tools/build_site.py` + `tools/subtiles.py` — edit copy/sub-tiles here, then
+  `python3 tools/build_site.py` regenerates `index.html` + every `<slug>.html`.
+- Sub-tile images live in `src/assets/<app>/`; PDFs (briefing, grid report) sit
+  alongside and open from the lightbox.
+
+Views per app: Hazard Intelligence 16 (2 PDFs) · IAD 2.0 11 · SnowCorps 10 ·
+Procurement 8 · Emergency Plan 5 · Onboarding 5 · TravelReceipt 3 · Document
+Translation 3. All are genuine captures (NYCEM30 / IAD login / Demo Mode / live PDFs).
+
+Flagged gaps (outputs I could not self-generate — provide samples to add):
+the Emergency Plan's final generated plan PDF; TravelReceipt's & Document
+Translation's emailed translated-PDF outputs; a real received briefing email
+for Hazard Intelligence.
+
 ## Infrastructure (created for this site only)
 
 | Resource | Value |

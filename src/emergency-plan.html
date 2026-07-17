@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NYC Emergency Plan Assistant — Selected Work</title>
+  <meta name="description" content="Inside NYC Emergency Plan Assistant — screens, products, and how it's built." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf8f4'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' font-family='Georgia,serif' fill='%23b0762a'%3ES%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="detail.css" />
+</head>
+<body>
+  <a class="skip-link" href="#views">Skip to screens</a>
+
+  <header class="site-header detail-header">
+    <div class="wrap">
+      <a class="back-link" href="index.html">← Selected Work</a>
+      <span class="detail-kicker">NYC Emergency Plan Assistant</span>
+      <h1 class="site-title">Multilingual, agentic emergency preparedness — for every New Yorker</h1>
+      <hr class="title-rule" aria-hidden="true" />
+      <p class="site-tagline">A guided, multilingual conversation that turns emergency-preparedness guidance into a personalized household plan — in the user's own language, with right-to-left rendering where needed. Built on a React/TypeScript front end with an AWS Lambda + Bedrock back end and prompt caching.</p>
+      <p class="detail-links"><a href="https://emergencyplanagent.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">emergencyplanagent.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="detail-count">· 5 views</span></p>
+    </div>
+  </header>
+
+  <main id="views" class="wrap">
+    <ul class="subgrid" role="list">
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/emergency/ep-choose.webp" data-caption="Choose Your Experience">
+          <img src="assets/emergency/ep-choose.webp" alt="Choose your experience" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Choose Your Experience</h2>
+          <p class="subtile-desc">The entry point: pick the standard English assistant or the translation-enabled multilingual version. One conversational tool, two front doors.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/emergency/ep-conversation.webp" data-caption="Guided Conversation">
+          <img src="assets/emergency/ep-conversation.webp" alt="Guided conversation" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Guided Conversation</h2>
+          <p class="subtile-desc">The assistant opens by explaining what it will do and offers to begin. Instead of a static PDF, preparedness starts as a plain-language chat that anyone can follow — and you can answer in any language.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/emergency/ep-intake.webp" data-caption="Household Intake">
+          <img src="assets/emergency/ep-intake.webp" alt="Household intake" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Household Intake</h2>
+          <p class="subtile-desc">Structured questions capture the details a good plan depends on: household size, each person's age range, special or functional needs, and pets. These answers drive what the generated plan recommends.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/emergency/ep-languages.webp" data-caption="Language Selection">
+          <img src="assets/emergency/ep-languages.webp" alt="Language selection" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Language Selection</h2>
+          <p class="subtile-desc">The multilingual version opens with a searchable language picker spanning dozens of languages. The interface, the conversation, and the final PDF are all rendered in the chosen language.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/emergency/ep-rtl.webp" data-caption="Right-to-Left Rendering">
+          <img src="assets/emergency/ep-rtl.webp" alt="Right-to-left rendering" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Right-to-Left Rendering</h2>
+          <p class="subtile-desc">Full right-to-left support for Arabic, Hebrew, and Urdu — the layout mirrors and the conversation reads naturally, not machine-translated text bolted onto a left-to-right shell.</p>
+        </div>
+      </li>
+
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><p><a class="back-link" href="index.html" style="margin:0">← Back to Selected Work</a></p></div>
+  </footer>
+
+  <div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+    <div class="lb-bar">
+      <span class="lb-caption"></span>
+      <div class="lb-actions">
+        <a class="lb-btn lb-download" hidden target="_blank" rel="noopener">↓ Download PDF</a>
+        <button class="lb-btn lb-close" type="button">✕ Close</button>
+      </div>
+    </div>
+    <div class="lb-stage">
+      <button class="lb-nav prev" type="button" aria-label="Previous screen">‹</button>
+      <img class="lb-img" alt="" />
+      <button class="lb-nav next" type="button" aria-label="Next screen">›</button>
+    </div>
+  </div>
+
+  <script src="detail.js"></script>
+</body>
+</html>
