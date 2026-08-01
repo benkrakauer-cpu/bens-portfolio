@@ -165,6 +165,19 @@ APPS = [
   'links':[{'href':'https://onboardingscheduler.benjaminkrakauer.com','label':'onboardingscheduler.benjaminkrakauer.com','note':'internal NYCEM tool'}],
   'tagline':'','subtiles':[],
  },
+ {
+  'slug':'callnotes','kicker':'CallNotes',
+  'headline':'Running the interagency call — and the record it leaves behind',
+  'oneliner':'An internal NYCEM tool for running emergency steering-committee calls and producing the official call notes.',
+  'home_image':'assets/images/callnotes.webp',
+  'home_alt':'CallNotes — live interagency emergency call capture',
+  'story':("When a hazard escalates, NYCEM runs an interagency steering-committee call — and someone has to capture who was on, what plans were "
+    "activated, the EOC status, and every agency's input, then turn it into an official record. CallNotes structures the whole call: a chair script "
+    "to run it, required prompts per agency and per hazard, and live capture that composes into a For-Official-Use-Only Word document. It supports two "
+    "note-takers with reconciliation, tracks how complete the record is, and is deliberately not a blank Word doc — it guides the notetaker so nothing is missed."),
+  'links':[{'href':'https://callnotes.benjaminkrakauer.com','label':'callnotes.benjaminkrakauer.com','note':'internal NYCEM tool'}],
+  'tagline':'','subtiles':[],
+ },
 ]
 
 # Merge richer per-app sub-tile data + taglines from subtiles.py (single source)

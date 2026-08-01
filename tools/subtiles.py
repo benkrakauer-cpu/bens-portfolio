@@ -28,6 +28,10 @@ TAGLINES = {
    ("Emergency procurement is fast, high-stakes, and rule-bound. Procurement Agent walks staff through the documents an emergency package needs — "
     "scopes of work, emergency justifications, market solicitations — with tools to pick the right method and check live NYC data. "
     "Built on Bedrock, Lambda, API Gateway, and DynamoDB."),
+ 'callnotes':
+   ("When a hazard escalates, NYCEM runs an interagency steering-committee call — and someone has to turn it into an official record. CallNotes runs "
+    "the call and captures it: a chair script, required prompts per agency and hazard, live capture that composes into a For-Official-Use-Only Word "
+    "document, and reconciliation when two note-takers work in parallel."),
 }
 
 SUBTILES = {
@@ -177,5 +181,24 @@ SUBTILES = {
      "A lookup for City-certified M/WBE vendors, usable on its own without starting a procurement — so staff can find certified minority- and women-owned businesses to include."),
    T('assets/procurement/pa-contracts.webp','Prior contracts search','Prior Contracts Search',
      "A search over similar past NYC contracts — describe what you're procuring and find precedents to price and scope against, drawing on live NYC data sources like Checkbook NYC."),
+ ],
+
+ 'callnotes': [
+   T('assets/callnotes/cn-setup.webp','Start a call','Start a Call',
+     "Every call begins here: pick the call type — Heat (HESC), Flash Flood (FFESC), Winter Weather (WWESC), or Multi-Hazard — set the active hazards, time, and chair, and flag whether it's a real or test call. The call's title composes automatically from those choices."),
+   T('assets/callnotes/cn-primer.webp','Before your first call','Before Your First Call',
+     "A short primer that sets expectations — CallNotes deliberately doesn't behave like a blank Word document. It explains how capture works (nothing is lost, blanks are meaningful, answers fill in) so a new note-taker trusts the tool on a live call."),
+   T('assets/callnotes/cn-call.webp','Running the call','Running the Call',
+     "The live capture screen: a chair script to run the meeting, the plans activated (Heat Emergency Plan, Air Quality Emergency Guide), the EOC status, and the roster of agencies invited. Everything the note-taker needs is structured and in front of them, not improvised."),
+   T('assets/callnotes/cn-frontmatter.webp','Per-agency prompts','Per-Agency Prompts',
+     "For each agency, the required questions are laid out — “Has cooling-center information?”, “Heat-related inquiries in the top five calls?”, “Participating in the EOC activation?” — with quick yes / no / not-requested answers and a notes field. The prompts change with the hazard."),
+   T('assets/callnotes/cn-agencies.webp','Attendance and messaging','Attendance &amp; Messaging',
+     "The full interagency roster by section — external affairs, human services, health &amp; medical, public safety, transportation, utilities — plus task-force status and public-messaging products like Notify NYC and heat-advisory messaging. It captures who's on and what's going out."),
+   T('assets/callnotes/cn-preview.webp','Document preview','Document Preview',
+     "A live preview of the record being composed — the titled interagency-call document with its date, time, and summary. It updates as the call is captured, so the note-taker always sees the record taking shape."),
+   T('assets/callnotes/cn-export.webp','Review and export','Review &amp; Export',
+     "The export step produces the official Word document — carrying the standard FOUO footer — and tracks how complete the record is: how many required questions are answered and which agencies have nothing recorded. A quality check before the notes are published."),
+   T('assets/callnotes/cn-reconcile.webp','Reconcile two note-takers','Reconcile <span aria-hidden="true">·</span> Two Note-Takers',
+     "For high-stakes calls, two people can take notes independently; reconciliation compares the two captures side by side and merges them. It's the safeguard that the official record isn't one person's fallible transcript."),
  ],
 }

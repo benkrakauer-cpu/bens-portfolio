@@ -83,6 +83,7 @@
 }
 .lb-btn:hover { background: rgba(255,255,255,.18); }
 .lb-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.lb-btn[hidden] { display: none; }   /* download button hidden on non-PDF views */
 .lb-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
 .lb-stage img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,.5); background: #fff; }
 .lb-nav {
