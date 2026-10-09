@@ -24,6 +24,9 @@ def links_html(links):
     parts = []
     for i, l in enumerate(links):
         if i: parts.append('<span class="link-sep" aria-hidden="true">·</span>')
+        if l.get('offline'):  # decommissioned: show the hostname, but no dead link
+            parts.append(f'<span class="link-offline">{l["label"]}</span><span class="link-note">offline</span>')
+            continue
         note = f'<span class="link-note">{l["note"]}</span>' if l.get('note') else ''
         parts.append(f'<a href="{l["href"]}" target="_blank" rel="noopener noreferrer">{l["label"]}{EXT}</a>{note}')
     return ''.join(parts)
@@ -147,8 +150,9 @@ APPS = [
   'story':("A two-sided application for organizing snow response: a worker app where people claim intersections, document completed work, and get paid, "
     "paired with an admin portal for oversight and coordination. It tackles the logistics problem behind a familiar civic promise — that the sidewalks "
     "and crossings actually get cleared."),
-  'links':[{'href':'https://snowcorps.benjaminkrakauer.com','label':'snowcorps.benjaminkrakauer.com','note':None},
-           {'href':'https://admin.snowcorps.benjaminkrakauer.com','label':'admin.snowcorps.benjaminkrakauer.com','note':None}],
+  # Decommissioned — screenshots kept; flip 'offline' off if it's rebuilt.
+  'links':[{'href':'https://snowcorps.benjaminkrakauer.com','label':'snowcorps.benjaminkrakauer.com','note':None,'offline':True},
+           {'href':'https://admin.snowcorps.benjaminkrakauer.com','label':'admin.snowcorps.benjaminkrakauer.com','note':None,'offline':True}],
   'tagline':'','subtiles':[],
  },
  {
