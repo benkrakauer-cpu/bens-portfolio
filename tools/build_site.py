@@ -24,6 +24,9 @@ def links_html(links):
     parts = []
     for i, l in enumerate(links):
         if i: parts.append('<span class="link-sep" aria-hidden="true">·</span>')
+        if l.get('offline'):  # decommissioned: show the hostname, but no dead link
+            parts.append(f'<span class="link-offline">{l["label"]}</span><span class="link-note">offline</span>')
+            continue
         note = f'<span class="link-note">{l["note"]}</span>' if l.get('note') else ''
         parts.append(f'<a href="{l["href"]}" target="_blank" rel="noopener noreferrer">{l["label"]}{EXT}</a>{note}')
     return ''.join(parts)
@@ -147,8 +150,9 @@ APPS = [
   'story':("A two-sided application for organizing snow response: a worker app where people claim intersections, document completed work, and get paid, "
     "paired with an admin portal for oversight and coordination. It tackles the logistics problem behind a familiar civic promise — that the sidewalks "
     "and crossings actually get cleared."),
-  'links':[{'href':'https://snowcorps.benjaminkrakauer.com','label':'snowcorps.benjaminkrakauer.com','note':None},
-           {'href':'https://admin.snowcorps.benjaminkrakauer.com','label':'admin.snowcorps.benjaminkrakauer.com','note':None}],
+  # Decommissioned — screenshots kept; flip 'offline' off if it's rebuilt.
+  'links':[{'href':'https://snowcorps.benjaminkrakauer.com','label':'snowcorps.benjaminkrakauer.com','note':None,'offline':True},
+           {'href':'https://admin.snowcorps.benjaminkrakauer.com','label':'admin.snowcorps.benjaminkrakauer.com','note':None,'offline':True}],
   'tagline':'','subtiles':[],
  },
  {
@@ -176,6 +180,20 @@ APPS = [
     "to run it, required prompts per agency and per hazard, and live capture that composes into a For-Official-Use-Only Word document. It supports two "
     "note-takers with reconciliation, tracks how complete the record is, and is deliberately not a blank Word doc — it guides the notetaker so nothing is missed."),
   'links':[{'href':'https://callnotes.benjaminkrakauer.com','label':'callnotes.benjaminkrakauer.com','note':'internal NYCEM tool'}],
+  'tagline':'','subtiles':[],
+ },
+ {
+  'slug':'quicklook','kicker':'QuickLook',
+  'headline':'Turning a pile of event files into a two-page after-action summary',
+  'oneliner':'An internal NYCEM tool that drafts post-event summaries from the sitreps, call notes, and emails already collected.',
+  'home_image':'assets/images/quicklook.webp',
+  'home_alt':'QuickLook — post-event summary builder for NYC Emergency Management',
+  'story':("After an event, the hard part of the after-action write-up is that the facts are scattered across dozens of sitreps, call notes, consult emails, "
+    "and leadership asides. QuickLook collects them in one place — email anything to a single address and it files each item to its event and replies with a "
+    "reference number — then drafts a two-page post-event summary from what was gathered. A Bedrock-backed pipeline reads the files, pulls official data, "
+    "builds and cross-checks a timeline, flags discrepancies, and writes the sections; it asks about the gaps instead of inventing numbers, and a person "
+    "reviews, reconciles reviewer comments, approves, and exports to Word or PDF. Built serverless on AWS."),
+  'links':[{'href':'https://quicklook.benjaminkrakauer.com','label':'quicklook.benjaminkrakauer.com','note':'internal NYCEM tool'}],
   'tagline':'','subtiles':[],
  },
 ]

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuickLook — Selected Work</title>
+  <meta name="description" content="Inside QuickLook — screens, products, and how it's built." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf8f4'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' font-family='Georgia,serif' fill='%23b0762a'%3ES%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="detail.css" />
+</head>
+<body>
+  <a class="skip-link" href="#views">Skip to screens</a>
+
+  <header class="site-header detail-header">
+    <div class="wrap">
+      <a class="back-link" href="index.html">← Selected Work</a>
+      <span class="detail-kicker">QuickLook</span>
+      <h1 class="site-title">Turning a pile of event files into a two-page after-action summary</h1>
+      <hr class="title-rule" aria-hidden="true" />
+      <p class="site-tagline">QuickLook turns the material already collected for an event — sitreps, call notes, consult emails, leadership direction — into a two-page post-event summary. Email anything to it, and a Bedrock-backed pipeline reads the files, builds a timeline, drafts the sections, and asks about the gaps; a person reviews, reconciles comments, approves, and exports. A tour of the intake, the synthesis pipeline, and the review that produces the document. Built serverless on AWS.</p>
+      <p class="detail-links"><a href="https://quicklook.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">quicklook.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-note">internal NYCEM tool</span><span class="detail-count">· 9 views</span></p>
+    </div>
+  </header>
+
+  <main id="views" class="wrap">
+    <ul class="subgrid" role="list">
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/quicklook/ql-home.webp" data-caption="Post-Event Summaries">
+          <img src="assets/quicklook/ql-home.webp" alt="Post-event summaries" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Post-Event Summaries</h2>
+          <p class="subtile-desc">The home is a shelf of event summaries — each with its event type, dates, version, and an approval count — that anyone can open and keep working. Drafts persist until someone deletes them, and every summary is built from the material already collected for its event rather than a blank page.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/quicklook/ql-inbox.webp" data-caption="Email Anything In">
+          <img src="assets/quicklook/ql-inbox.webp" alt="Email anything in" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Email Anything In</h2>
+          <p class="subtile-desc">Everything emailed to one <code>submit@</code> address is filed here by event — sitreps, call notes, photos, files, even a one-line “make sure we highlight this” from leadership. Each sender gets an automatic reply with a reference number, and QuickLook sorts the mail (needs a home / filed / possible spam) and proposes the best-matching event for a person to confirm.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/quicklook/ql-basics.webp" data-caption="Event Basics">
+          <img src="assets/quicklook/ql-basics.webp" alt="Event basics" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Event Basics</h2>
+          <p class="subtile-desc">The summary starts with what happened and the days it covers — event name, subtitle, event type (coastal storm, heat, winter storm, utility, public health…), and the tracking window. These basics set the report's title and frame everything the tool goes on to draft.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/quicklook/ql-upload.webp" data-caption="Start From Files">
+          <img src="assets/quicklook/ql-upload.webp" alt="Start from files" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Start From Files</h2>
+          <p class="subtile-desc">Drop in anything related to the event, sorted into the buckets NYCEM actually produces — situation reports, Steering Committee call notes, weather consults, NWS briefings, task-force reports, leadership briefings, contracts. The more you add the better the draft, and new files update it even after it's written.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/quicklook/ql-analyze.webp" data-caption="Analyze &amp; Synthesize">
+          <img src="assets/quicklook/ql-analyze.webp" alt="Analyze and synthesize" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Analyze &amp; Synthesize</h2>
+          <p class="subtile-desc">A Bedrock-backed pipeline reads the files, pulls official data, builds and cross-checks a timeline, flags discrepancies, drafts the sections, and prepares follow-up questions. It's the synthesis step that turns a pile of documents into a structured, traceable draft.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/quicklook/ql-questions.webp" data-caption="Follow-Up Questions">
+          <img src="assets/quicklook/ql-questions.webp" alt="Follow-up questions" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Follow-Up Questions</h2>
+          <p class="subtile-desc">Where the files leave a gap, QuickLook asks — here, “How many Notify NYC messages went out each day?”, because no log was found — and shows what direction it applied from your own files. Any question can be skipped; it shows as a flag in review rather than becoming an invented number.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/quicklook/ql-review.webp" data-caption="Review Sections">
+          <img src="assets/quicklook/ql-review.webp" alt="Review sections" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Review Sections</h2>
+          <p class="subtile-desc">Each section — headline numbers, summary, timeline, key actions, novel operations, annex — is edited as tiles beside a live two-page preview that updates as you type, with every number traceable to its source. Sections are approved one at a time, and a page-fit indicator keeps the whole thing to two pages plus an annex.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/quicklook/ql-comments.webp" data-caption="Reviewer Comments">
+          <img src="assets/quicklook/ql-comments.webp" alt="Reviewer comments" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Reviewer Comments</h2>
+          <p class="subtile-desc">Upload marked-up Word or PDF copies, or add comments you heard out loud — typed or recorded — and QuickLook produces a new version, a comment log, and flags conflicts between reviewers. It closes the loop between a draft and the people who have to sign off on it.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/quicklook/ql-document.webp" data-caption="Document Preview &amp; Export">
+          <img src="assets/quicklook/ql-document.webp" alt="Document preview and export" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Document Preview &amp; Export</h2>
+          <p class="subtile-desc">The live preview renders the actual post-event summary — “Testing 1-2-3 brought coastal storm conditions to New York City… producing 3.16 inches of rain… 437 FloodNet sensors monitored live” — across Page 1, Page 2, and an annex. It exports to PDF or Word, carrying a DRAFT watermark until every section is approved.</p>
+        </div>
+      </li>
+
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><p><a class="back-link" href="index.html" style="margin:0">← Back to Selected Work</a></p></div>
+  </footer>
+
+  <div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+    <div class="lb-bar">
+      <span class="lb-caption"></span>
+      <div class="lb-actions">
+        <a class="lb-btn lb-download" hidden target="_blank" rel="noopener">↓ Download PDF</a>
+        <button class="lb-btn lb-close" type="button">✕ Close</button>
+      </div>
+    </div>
+    <div class="lb-stage">
+      <button class="lb-nav prev" type="button" aria-label="Previous screen">‹</button>
+      <img class="lb-img" alt="" />
+      <button class="lb-nav next" type="button" aria-label="Next screen">›</button>
+    </div>
+  </div>
+
+  <script src="detail.js"></script>
+</body>
+</html>

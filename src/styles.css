@@ -173,6 +173,7 @@ body {
 .tile-links a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 .ext { opacity: .7; flex: none; }
 .link-sep { color: var(--ink-faint); }
+.link-offline { color: var(--ink-faint); font-weight: 600; }
 .link-note {
   margin-left: 4px; font-size: 12px; font-weight: 500; color: var(--ink-faint);
   background: var(--accent-soft); padding: 2px 8px; border-radius: 999px;
