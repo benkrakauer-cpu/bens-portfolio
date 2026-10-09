@@ -29,9 +29,13 @@ TAGLINES = {
     "scopes of work, emergency justifications, market solicitations — with tools to pick the right method and check live NYC data. "
     "Built on Bedrock, Lambda, API Gateway, and DynamoDB."),
  'callnotes':
-   ("When a hazard escalates, NYCEM runs an interagency steering-committee call — and someone has to turn it into an official record. CallNotes runs "
-    "the call and captures it: a chair script, required prompts per agency and hazard, live capture that composes into a For-Official-Use-Only Word "
-    "document, and reconciliation when two note-takers work in parallel."),
+   ("When a hazard escalates, NYCEM runs an interagency steering-committee call — and someone has to turn it into an official record. CallNotes runs the "
+    "call and captures it two ways: live, answering structured prompts as agencies report, or after the fact from a Teams transcript. A tour of the day's "
+    "board, the agency cards, the composed For-Official-Use-Only document, and the reliability work underneath."),
+ 'quicklook':
+   ("QuickLook turns the material already collected for an event — sitreps, call notes, consult emails, leadership direction — into a two-page post-event "
+    "summary. Email anything to it, and a Bedrock-backed pipeline reads the files, builds a timeline, drafts the sections, and asks about the gaps; a person "
+    "reviews, reconciles comments, approves, and exports. A tour of the intake, the synthesis pipeline, and the review that produces the document. Built serverless on AWS."),
 }
 
 SUBTILES = {
@@ -184,21 +188,46 @@ SUBTILES = {
  ],
 
  'callnotes': [
+   T('assets/callnotes/cn-today.webp','The day\'s board','Today',
+     "The day's board: who's note-taking, which calls are already running, and a single button to start a new one. A second note-taker joins an existing call from here — one call, one shared record — and your name is required up front, because that's how reconciliation tells two note-takers apart."),
    T('assets/callnotes/cn-setup.webp','Start a call','Start a Call',
-     "Every call begins here: pick the call type — Heat (HESC), Flash Flood (FFESC), Winter Weather (WWESC), or Multi-Hazard — set the active hazards, time, and chair, and flag whether it's a real or test call. The call's title composes automatically from those choices."),
-   T('assets/callnotes/cn-primer.webp','Before your first call','Before Your First Call',
-     "A short primer that sets expectations — CallNotes deliberately doesn't behave like a blank Word document. It explains how capture works (nothing is lost, blanks are meaningful, answers fill in) so a new note-taker trusts the tool on a live call."),
-   T('assets/callnotes/cn-call.webp','Running the call','Running the Call',
-     "The live capture screen: a chair script to run the meeting, the plans activated (Heat Emergency Plan, Air Quality Emergency Guide), the EOC status, and the roster of agencies invited. Everything the note-taker needs is structured and in front of them, not improvised."),
-   T('assets/callnotes/cn-frontmatter.webp','Per-agency prompts','Per-Agency Prompts',
-     "For each agency, the required questions are laid out — “Has cooling-center information?”, “Heat-related inquiries in the top five calls?”, “Participating in the EOC activation?” — with quick yes / no / not-requested answers and a notes field. The prompts change with the hazard."),
-   T('assets/callnotes/cn-agencies.webp','Attendance and messaging','Attendance &amp; Messaging',
-     "The full interagency roster by section — external affairs, human services, health &amp; medical, public safety, transportation, utilities — plus task-force status and public-messaging products like Notify NYC and heat-advisory messaging. It captures who's on and what's going out."),
+     "A new call is defined by its form — Heat (HESC), Flash Flood (FFESC), All Hazards, Winter Weather (WWESC), Coastal Storm (CCSC), or General — its active hazards, time, and chair, and whether it's a real or a test call. The title composes itself from those choices: pick Extreme Heat and Air Quality and it becomes the “Heat &amp; Air Quality Interagency Call.”"),
+   T('assets/callnotes/cn-choose.webp','Two ways to capture','Two Ways to Capture',
+     "Every call opens with a choice of how to capture it: answer prompts live as agencies report, or start from an uploaded Teams transcript after the call. Either path lands on the same 32 agency cards, and you can switch between them mid-call — nothing here is a commitment."),
+   T('assets/callnotes/cn-frontmatter.webp','Front matter and NYCEM','Front Matter &amp; NYCEM',
+     "Before the agencies come the chair script and the NYCEM block: the plans activated (Heat Emergency Plan, Air Quality Emergency Guide), the EOC status and mode, and the agencies invited. These answers are captured first because they drive derivations on every other card."),
+   T('assets/callnotes/cn-agency-card.webp','Per-agency prompts','Per-Agency Prompts',
+     "Each agency gets a card of required, hazard-specific prompts — for FDNY on a heat call: EMS call volume, high-priority calls holding due to volume, unusual heat-related incidents — answered with quick taps plus a free-text note for anything the questions don't cover. The left rail tracks how many blocks each of the 32 agencies still has to go."),
+   T('assets/callnotes/cn-transcript.webp','Start from a transcript','Start From a Transcript',
+     "Upload the Teams transcript as <code>.docx</code> or <code>.vtt</code>, or paste the live-transcript panel; the format is worked out from the words, not the file. The Word export is the richest source because it carries a speaker's email address, which is what places them on the right agency without the note-taker having to."),
    T('assets/callnotes/cn-preview.webp','Document preview','Document Preview',
-     "A live preview of the record being composed — the titled interagency-call document with its date, time, and summary. It updates as the call is captured, so the note-taker always sees the record taking shape."),
+     "A live preview of the official record as it composes — the titled interagency-call document with its purpose, date and time, and a participants grid — so the note-taker always sees the Word document taking shape. An agency with nothing recorded is simply absent from the document, which is deliberate, not a rendering gap."),
    T('assets/callnotes/cn-export.webp','Review and export','Review &amp; Export',
-     "The export step produces the official Word document — carrying the standard FOUO footer — and tracks how complete the record is: how many required questions are answered and which agencies have nothing recorded. A quality check before the notes are published."),
-   T('assets/callnotes/cn-reconcile.webp','Reconcile two note-takers','Reconcile <span aria-hidden="true">·</span> Two Note-Takers',
-     "For high-stakes calls, two people can take notes independently; reconciliation compares the two captures side by side and merges them. It's the safeguard that the official record isn't one person's fallible transcript."),
+     "The export step produces the FOUO Word document and, before it goes out, shows what to check: answers that print nothing, other calls on the same day, how complete the record is (“6 of 172 required questions answered”), and which reporting-tier agencies recorded nothing. Warnings never gate the export — the document always comes out."),
+   T('assets/callnotes/cn-primer.webp','Before your first call','Before Your First Call',
+     "A short primer covering the seven places CallNotes deliberately doesn't behave like a blank Word document — nothing typed can be lost to the network, an unanswered question stays honestly blank rather than becoming a “No,” and amber means unfinished, not wrong. It's there so a new note-taker trusts the tool on a live call."),
+   T('assets/callnotes/cn-diagnostics.webp','Diagnostics and reliability','Diagnostics &amp; Reliability',
+     "Built for a live operational call, CallNotes carries its own diagnostics — the call and session IDs, the sync phase and queue, the last error, and a log of recent API calls with their timings — alongside a one-sentence “Report a problem” that already knows where you are. The reliability work that lets someone depend on it while a hazard is escalating."),
+ ],
+
+ 'quicklook': [
+   T('assets/quicklook/ql-home.webp','Post-event summaries','Post-Event Summaries',
+     "The home is a shelf of event summaries — each with its event type, dates, version, and an approval count — that anyone can open and keep working. Drafts persist until someone deletes them, and every summary is built from the material already collected for its event rather than a blank page."),
+   T('assets/quicklook/ql-inbox.webp','Email anything in','Email Anything In',
+     "Everything emailed to one <code>submit@</code> address is filed here by event — sitreps, call notes, photos, files, even a one-line “make sure we highlight this” from leadership. Each sender gets an automatic reply with a reference number, and QuickLook sorts the mail (needs a home / filed / possible spam) and proposes the best-matching event for a person to confirm."),
+   T('assets/quicklook/ql-basics.webp','Event basics','Event Basics',
+     "The summary starts with what happened and the days it covers — event name, subtitle, event type (coastal storm, heat, winter storm, utility, public health…), and the tracking window. These basics set the report's title and frame everything the tool goes on to draft."),
+   T('assets/quicklook/ql-upload.webp','Start from files','Start From Files',
+     "Drop in anything related to the event, sorted into the buckets NYCEM actually produces — situation reports, Steering Committee call notes, weather consults, NWS briefings, task-force reports, leadership briefings, contracts. The more you add the better the draft, and new files update it even after it's written."),
+   T('assets/quicklook/ql-analyze.webp','Analyze and synthesize','Analyze &amp; Synthesize',
+     "A Bedrock-backed pipeline reads the files, pulls official data, builds and cross-checks a timeline, flags discrepancies, drafts the sections, and prepares follow-up questions. It's the synthesis step that turns a pile of documents into a structured, traceable draft."),
+   T('assets/quicklook/ql-questions.webp','Follow-up questions','Follow-Up Questions',
+     "Where the files leave a gap, QuickLook asks — here, “How many Notify NYC messages went out each day?”, because no log was found — and shows what direction it applied from your own files. Any question can be skipped; it shows as a flag in review rather than becoming an invented number."),
+   T('assets/quicklook/ql-review.webp','Review sections','Review Sections',
+     "Each section — headline numbers, summary, timeline, key actions, novel operations, annex — is edited as tiles beside a live two-page preview that updates as you type, with every number traceable to its source. Sections are approved one at a time, and a page-fit indicator keeps the whole thing to two pages plus an annex."),
+   T('assets/quicklook/ql-comments.webp','Reviewer comments','Reviewer Comments',
+     "Upload marked-up Word or PDF copies, or add comments you heard out loud — typed or recorded — and QuickLook produces a new version, a comment log, and flags conflicts between reviewers. It closes the loop between a draft and the people who have to sign off on it."),
+   T('assets/quicklook/ql-document.webp','Document preview and export','Document Preview &amp; Export',
+     "The live preview renders the actual post-event summary — “Testing 1-2-3 brought coastal storm conditions to New York City… producing 3.16 inches of rain… 437 FloodNet sensors monitored live” — across Page 1, Page 2, and an annex. It exports to PDF or Word, carrying a DRAFT watermark until every section is approved."),
  ],
 }

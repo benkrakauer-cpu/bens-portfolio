@@ -1,0 +1,26 @@
+import { chromium } from 'playwright';
+import path from 'path'; import fs from 'fs';
+const EXE='/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+const PROXY=process.env.HTTPS_PROXY;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const OUT=path.resolve('captures/callnotes'); fs.mkdirSync(OUT,{recursive:true});
+const b=await chromium.launch({executablePath:EXE,args:['--no-sandbox',`--proxy-server=${PROXY}`,'--ssl-version-max=tls1.2','--disable-http2']});
+const ctx=await b.newContext({viewport:{width:1440,height:900},deviceScaleFactor:2,ignoreHTTPSErrors:true});
+const p=await ctx.newPage();
+const click=async (t,exact=false)=>{ try{ await p.getByText(t,{exact}).first().click({timeout:3500}); return true;}catch{ return false; } };
+await p.goto('https://callnotes.benjaminkrakauer.com/',{waitUntil:'domcontentloaded',timeout:45000}).catch(()=>{});
+await sleep(2500);
+const pw=p.locator('#p, input[type=password]').first();
+if(await pw.count()>0){ await pw.fill('NYCEM30'); await p.getByRole('button',{name:/enter/i}).first().click({timeout:5000}).catch(()=>{}); await sleep(5000); }
+await p.locator('input').first().fill('Ben Krakauer').catch(()=>{});
+await sleep(600);
+await p.getByRole('button',{name:/start a new call/i}).first().click({timeout:5000}).catch(()=>{});
+await sleep(3000);
+await click('Heat (HESC)'); await sleep(900);
+await click('Start call'); await sleep(4500);
+await click('Capture the call live'); await sleep(3500);
+await click('Front matter & NYCEM'); await sleep(2000);
+await click('Diagnostics'); await sleep(2000);
+await p.screenshot({path:path.join(OUT,'cn-diagnostics.png')}); console.log('shot cn-diagnostics');
+await ctx.close(); await b.close();
+console.log('done');

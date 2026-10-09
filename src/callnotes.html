@@ -20,8 +20,8 @@
       <span class="detail-kicker">CallNotes</span>
       <h1 class="site-title">Running the interagency call — and the record it leaves behind</h1>
       <hr class="title-rule" aria-hidden="true" />
-      <p class="site-tagline">When a hazard escalates, NYCEM runs an interagency steering-committee call — and someone has to turn it into an official record. CallNotes runs the call and captures it: a chair script, required prompts per agency and hazard, live capture that composes into a For-Official-Use-Only Word document, and reconciliation when two note-takers work in parallel.</p>
-      <p class="detail-links"><a href="https://callnotes.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">callnotes.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-note">internal NYCEM tool</span><span class="detail-count">· 8 views</span></p>
+      <p class="site-tagline">When a hazard escalates, NYCEM runs an interagency steering-committee call — and someone has to turn it into an official record. CallNotes runs the call and captures it two ways: live, answering structured prompts as agencies report, or after the fact from a Teams transcript. A tour of the day's board, the agency cards, the composed For-Official-Use-Only document, and the reliability work underneath.</p>
+      <p class="detail-links"><a href="https://callnotes.benjaminkrakauer.com" target="_blank" rel="noopener noreferrer">callnotes.benjaminkrakauer.com<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 3h7v7M13 3L6.5 9.5M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="link-note">internal NYCEM tool</span><span class="detail-count">· 10 views</span></p>
     </div>
   </header>
 
@@ -29,52 +29,62 @@
     <ul class="subgrid" role="list">
 
       <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/callnotes/cn-today.webp" data-caption="Today">
+          <img src="assets/callnotes/cn-today.webp" alt="The day's board" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Today</h2>
+          <p class="subtile-desc">The day's board: who's note-taking, which calls are already running, and a single button to start a new one. A second note-taker joins an existing call from here — one call, one shared record — and your name is required up front, because that's how reconciliation tells two note-takers apart.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
         <button class="subtile-view" data-full="assets/callnotes/cn-setup.webp" data-caption="Start a Call">
           <img src="assets/callnotes/cn-setup.webp" alt="Start a call" loading="eager" decoding="async" />
         </button>
         <div class="subtile-body">
           <h2 class="subtile-title">Start a Call</h2>
-          <p class="subtile-desc">Every call begins here: pick the call type — Heat (HESC), Flash Flood (FFESC), Winter Weather (WWESC), or Multi-Hazard — set the active hazards, time, and chair, and flag whether it's a real or test call. The call's title composes automatically from those choices.</p>
+          <p class="subtile-desc">A new call is defined by its form — Heat (HESC), Flash Flood (FFESC), All Hazards, Winter Weather (WWESC), Coastal Storm (CCSC), or General — its active hazards, time, and chair, and whether it's a real or a test call. The title composes itself from those choices: pick Extreme Heat and Air Quality and it becomes the “Heat &amp; Air Quality Interagency Call.”</p>
         </div>
       </li>
 
       <li class="subtile" role="listitem">
-        <button class="subtile-view" data-full="assets/callnotes/cn-primer.webp" data-caption="Before Your First Call">
-          <img src="assets/callnotes/cn-primer.webp" alt="Before your first call" loading="eager" decoding="async" />
+        <button class="subtile-view" data-full="assets/callnotes/cn-choose.webp" data-caption="Two Ways to Capture">
+          <img src="assets/callnotes/cn-choose.webp" alt="Two ways to capture" loading="eager" decoding="async" />
         </button>
         <div class="subtile-body">
-          <h2 class="subtile-title">Before Your First Call</h2>
-          <p class="subtile-desc">A short primer that sets expectations — CallNotes deliberately doesn't behave like a blank Word document. It explains how capture works (nothing is lost, blanks are meaningful, answers fill in) so a new note-taker trusts the tool on a live call.</p>
+          <h2 class="subtile-title">Two Ways to Capture</h2>
+          <p class="subtile-desc">Every call opens with a choice of how to capture it: answer prompts live as agencies report, or start from an uploaded Teams transcript after the call. Either path lands on the same 32 agency cards, and you can switch between them mid-call — nothing here is a commitment.</p>
         </div>
       </li>
 
       <li class="subtile" role="listitem">
-        <button class="subtile-view" data-full="assets/callnotes/cn-call.webp" data-caption="Running the Call">
-          <img src="assets/callnotes/cn-call.webp" alt="Running the call" loading="eager" decoding="async" />
+        <button class="subtile-view" data-full="assets/callnotes/cn-frontmatter.webp" data-caption="Front Matter &amp; NYCEM">
+          <img src="assets/callnotes/cn-frontmatter.webp" alt="Front matter and NYCEM" loading="eager" decoding="async" />
         </button>
         <div class="subtile-body">
-          <h2 class="subtile-title">Running the Call</h2>
-          <p class="subtile-desc">The live capture screen: a chair script to run the meeting, the plans activated (Heat Emergency Plan, Air Quality Emergency Guide), the EOC status, and the roster of agencies invited. Everything the note-taker needs is structured and in front of them, not improvised.</p>
+          <h2 class="subtile-title">Front Matter &amp; NYCEM</h2>
+          <p class="subtile-desc">Before the agencies come the chair script and the NYCEM block: the plans activated (Heat Emergency Plan, Air Quality Emergency Guide), the EOC status and mode, and the agencies invited. These answers are captured first because they drive derivations on every other card.</p>
         </div>
       </li>
 
       <li class="subtile" role="listitem">
-        <button class="subtile-view" data-full="assets/callnotes/cn-frontmatter.webp" data-caption="Per-Agency Prompts">
-          <img src="assets/callnotes/cn-frontmatter.webp" alt="Per-agency prompts" loading="eager" decoding="async" />
+        <button class="subtile-view" data-full="assets/callnotes/cn-agency-card.webp" data-caption="Per-Agency Prompts">
+          <img src="assets/callnotes/cn-agency-card.webp" alt="Per-agency prompts" loading="eager" decoding="async" />
         </button>
         <div class="subtile-body">
           <h2 class="subtile-title">Per-Agency Prompts</h2>
-          <p class="subtile-desc">For each agency, the required questions are laid out — “Has cooling-center information?”, “Heat-related inquiries in the top five calls?”, “Participating in the EOC activation?” — with quick yes / no / not-requested answers and a notes field. The prompts change with the hazard.</p>
+          <p class="subtile-desc">Each agency gets a card of required, hazard-specific prompts — for FDNY on a heat call: EMS call volume, high-priority calls holding due to volume, unusual heat-related incidents — answered with quick taps plus a free-text note for anything the questions don't cover. The left rail tracks how many blocks each of the 32 agencies still has to go.</p>
         </div>
       </li>
 
       <li class="subtile" role="listitem">
-        <button class="subtile-view" data-full="assets/callnotes/cn-agencies.webp" data-caption="Attendance &amp; Messaging">
-          <img src="assets/callnotes/cn-agencies.webp" alt="Attendance and messaging" loading="eager" decoding="async" />
+        <button class="subtile-view" data-full="assets/callnotes/cn-transcript.webp" data-caption="Start From a Transcript">
+          <img src="assets/callnotes/cn-transcript.webp" alt="Start from a transcript" loading="eager" decoding="async" />
         </button>
         <div class="subtile-body">
-          <h2 class="subtile-title">Attendance &amp; Messaging</h2>
-          <p class="subtile-desc">The full interagency roster by section — external affairs, human services, health &amp; medical, public safety, transportation, utilities — plus task-force status and public-messaging products like Notify NYC and heat-advisory messaging. It captures who's on and what's going out.</p>
+          <h2 class="subtile-title">Start From a Transcript</h2>
+          <p class="subtile-desc">Upload the Teams transcript as <code>.docx</code> or <code>.vtt</code>, or paste the live-transcript panel; the format is worked out from the words, not the file. The Word export is the richest source because it carries a speaker's email address, which is what places them on the right agency without the note-taker having to.</p>
         </div>
       </li>
 
@@ -84,7 +94,7 @@
         </button>
         <div class="subtile-body">
           <h2 class="subtile-title">Document Preview</h2>
-          <p class="subtile-desc">A live preview of the record being composed — the titled interagency-call document with its date, time, and summary. It updates as the call is captured, so the note-taker always sees the record taking shape.</p>
+          <p class="subtile-desc">A live preview of the official record as it composes — the titled interagency-call document with its purpose, date and time, and a participants grid — so the note-taker always sees the Word document taking shape. An agency with nothing recorded is simply absent from the document, which is deliberate, not a rendering gap.</p>
         </div>
       </li>
 
@@ -94,17 +104,27 @@
         </button>
         <div class="subtile-body">
           <h2 class="subtile-title">Review &amp; Export</h2>
-          <p class="subtile-desc">The export step produces the official Word document — carrying the standard FOUO footer — and tracks how complete the record is: how many required questions are answered and which agencies have nothing recorded. A quality check before the notes are published.</p>
+          <p class="subtile-desc">The export step produces the FOUO Word document and, before it goes out, shows what to check: answers that print nothing, other calls on the same day, how complete the record is (“6 of 172 required questions answered”), and which reporting-tier agencies recorded nothing. Warnings never gate the export — the document always comes out.</p>
         </div>
       </li>
 
       <li class="subtile" role="listitem">
-        <button class="subtile-view" data-full="assets/callnotes/cn-reconcile.webp" data-caption="Reconcile · Two Note-Takers">
-          <img src="assets/callnotes/cn-reconcile.webp" alt="Reconcile two note-takers" loading="eager" decoding="async" />
+        <button class="subtile-view" data-full="assets/callnotes/cn-primer.webp" data-caption="Before Your First Call">
+          <img src="assets/callnotes/cn-primer.webp" alt="Before your first call" loading="eager" decoding="async" />
         </button>
         <div class="subtile-body">
-          <h2 class="subtile-title">Reconcile <span aria-hidden="true">·</span> Two Note-Takers</h2>
-          <p class="subtile-desc">For high-stakes calls, two people can take notes independently; reconciliation compares the two captures side by side and merges them. It's the safeguard that the official record isn't one person's fallible transcript.</p>
+          <h2 class="subtile-title">Before Your First Call</h2>
+          <p class="subtile-desc">A short primer covering the seven places CallNotes deliberately doesn't behave like a blank Word document — nothing typed can be lost to the network, an unanswered question stays honestly blank rather than becoming a “No,” and amber means unfinished, not wrong. It's there so a new note-taker trusts the tool on a live call.</p>
+        </div>
+      </li>
+
+      <li class="subtile" role="listitem">
+        <button class="subtile-view" data-full="assets/callnotes/cn-diagnostics.webp" data-caption="Diagnostics &amp; Reliability">
+          <img src="assets/callnotes/cn-diagnostics.webp" alt="Diagnostics and reliability" loading="eager" decoding="async" />
+        </button>
+        <div class="subtile-body">
+          <h2 class="subtile-title">Diagnostics &amp; Reliability</h2>
+          <p class="subtile-desc">Built for a live operational call, CallNotes carries its own diagnostics — the call and session IDs, the sync phase and queue, the last error, and a log of recent API calls with their timings — alongside a one-sentence “Report a problem” that already knows where you are. The reliability work that lets someone depend on it while a hazard is escalating.</p>
         </div>
       </li>
 

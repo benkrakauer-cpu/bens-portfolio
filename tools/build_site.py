@@ -178,6 +178,20 @@ APPS = [
   'links':[{'href':'https://callnotes.benjaminkrakauer.com','label':'callnotes.benjaminkrakauer.com','note':'internal NYCEM tool'}],
   'tagline':'','subtiles':[],
  },
+ {
+  'slug':'quicklook','kicker':'QuickLook',
+  'headline':'Turning a pile of event files into a two-page after-action summary',
+  'oneliner':'An internal NYCEM tool that drafts post-event summaries from the sitreps, call notes, and emails already collected.',
+  'home_image':'assets/images/quicklook.webp',
+  'home_alt':'QuickLook — post-event summary builder for NYC Emergency Management',
+  'story':("After an event, the hard part of the after-action write-up is that the facts are scattered across dozens of sitreps, call notes, consult emails, "
+    "and leadership asides. QuickLook collects them in one place — email anything to a single address and it files each item to its event and replies with a "
+    "reference number — then drafts a two-page post-event summary from what was gathered. A Bedrock-backed pipeline reads the files, pulls official data, "
+    "builds and cross-checks a timeline, flags discrepancies, and writes the sections; it asks about the gaps instead of inventing numbers, and a person "
+    "reviews, reconciles reviewer comments, approves, and exports to Word or PDF. Built serverless on AWS."),
+  'links':[{'href':'https://quicklook.benjaminkrakauer.com','label':'quicklook.benjaminkrakauer.com','note':'internal NYCEM tool'}],
+  'tagline':'','subtiles':[],
+ },
 ]
 
 # Merge richer per-app sub-tile data + taglines from subtiles.py (single source)
