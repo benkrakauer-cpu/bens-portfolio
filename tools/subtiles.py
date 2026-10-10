@@ -31,7 +31,8 @@ TAGLINES = {
  'callnotes':
    ("When a hazard escalates, NYCEM runs an interagency steering-committee call — and someone has to turn it into an official record. CallNotes runs the "
     "call and captures it two ways: live, answering structured prompts as agencies report, or after the fact from a Teams transcript. A tour of the day's "
-    "board, the agency cards, the composed For-Official-Use-Only document, and the reliability work underneath."),
+    "board, the agency cards, the composed For-Official-Use-Only document, and the reliability work underneath — shown with a "
+    "fully worked test call (demo answers)."),
  'quicklook':
    ("QuickLook turns the material already collected for an event — sitreps, call notes, consult emails, leadership direction — into a two-page post-event "
     "summary. Email anything to it, and a Bedrock-backed pipeline reads the files, builds a timeline, drafts the sections, and asks about the gaps; a person "
@@ -189,25 +190,25 @@ SUBTILES = {
 
  'callnotes': [
    T('assets/callnotes/cn-today.webp','The day\'s board','Today',
-     "The day's board: who's note-taking, which calls are already running, and a single button to start a new one. A second note-taker joins an existing call from here — one call, one shared record — and your name is required up front, because that's how reconciliation tells two note-takers apart."),
+     "The board of running calls: who started each one, a <strong>Join</strong> button that adds a second note-taker to the same record, and <strong>this is me</strong> to pick a call back up on another device. Your name is required up front because that's how reconciliation tells two note-takers apart. Test calls are flagged and hidden from the list by default."),
    T('assets/callnotes/cn-setup.webp','Start a call','Start a Call',
-     "A new call is defined by its form — Heat (HESC), Flash Flood (FFESC), All Hazards, Winter Weather (WWESC), Coastal Storm (CCSC), or General — its active hazards, time, and chair, and whether it's a real or a test call. The title composes itself from those choices: pick Extreme Heat and Air Quality and it becomes the “Heat &amp; Air Quality Interagency Call.”"),
-   T('assets/callnotes/cn-choose.webp','Two ways to capture','Two Ways to Capture',
-     "Every call opens with a choice of how to capture it: answer prompts live as agencies report, or start from an uploaded Teams transcript after the call. Either path lands on the same 32 agency cards, and you can switch between them mid-call — nothing here is a commitment."),
+     "A new call is defined by its form — Heat (HESC), Flash Flood (FFESC), All Hazards, Winter Weather (WWESC), Coastal Storm (CCSC), or General — plus its active hazards, time, and chair. The title composes itself from those choices: Extreme Heat plus Air Quality becomes the “Heat &amp; Air Quality Interagency Call.” A test call stamps every page of the document TEST CALL — NOT FOR DISTRIBUTION."),
    T('assets/callnotes/cn-frontmatter.webp','Front matter and NYCEM','Front Matter &amp; NYCEM',
-     "Before the agencies come the chair script and the NYCEM block: the plans activated (Heat Emergency Plan, Air Quality Emergency Guide), the EOC status and mode, and the agencies invited. These answers are captured first because they drive derivations on every other card."),
+     "Before the agencies come the chair script and the NYCEM block: the plans activated, the EOC status, mode, and shift. These answers are captured first because they drive derivations on every other card — set the EOC level here, and most agencies' EOC-participation questions answer themselves."),
    T('assets/callnotes/cn-agency-card.webp','Per-agency prompts','Per-Agency Prompts',
-     "Each agency gets a card of required, hazard-specific prompts — for FDNY on a heat call: EMS call volume, high-priority calls holding due to volume, unusual heat-related incidents — answered with quick taps plus a free-text note for anything the questions don't cover. The left rail tracks how many blocks each of the 32 agencies still has to go."),
+     "Each of the 32 agencies gets a card of required, hazard-specific prompts — for FDNY on a heat call: spray caps, EMS call volume by row, calls holding, unusual heat-related incidents — answered with quick taps, plus a free-text note for anything the questions don't cover. Blocks turn green when done, and the left rail shows what each agency still has to go."),
    T('assets/callnotes/cn-transcript.webp','Start from a transcript','Start From a Transcript',
-     "Upload the Teams transcript as <code>.docx</code> or <code>.vtt</code>, or paste the live-transcript panel; the format is worked out from the words, not the file. The Word export is the richest source because it carries a speaker's email address, which is what places them on the right agency without the note-taker having to."),
+     "Every call can be captured live, or after the fact from the Teams transcript. Upload it as <code>.docx</code> or <code>.vtt</code>, or paste the live-transcript panel; the format is worked out from the words, not the file. The Word export is the richest source because it carries each speaker's email address, which is what places them on the right agency automatically."),
    T('assets/callnotes/cn-preview.webp','Document preview','Document Preview',
-     "A live preview of the official record as it composes — the titled interagency-call document with its purpose, date and time, and a participants grid — so the note-taker always sees the Word document taking shape. An agency with nothing recorded is simply absent from the document, which is deliberate, not a rendering gap."),
+     "The official record, composed live as the call is captured: the titled interagency-call document with its purpose, date, time and chair, a Cooling Center Report, and the participants grid checked off from the agency cards. The note-taker always sees exactly what the Word document will say."),
+   T('assets/callnotes/cn-notes.webp','Composed agency notes','Composed Agency Notes',
+     "Taps become sentences. Each answer is written into a consistent bullet — “<strong>Has</strong> cooling center information,” “Wellness checks <strong>under way</strong>,” “Code Grey <strong>planned</strong> from 10/9 1400 HRS” — grouped by section, with the note-taker's free text appended. An agency with nothing recorded is simply absent, the way the published notes have always read."),
    T('assets/callnotes/cn-export.webp','Review and export','Review &amp; Export',
-     "The export step produces the FOUO Word document and, before it goes out, shows what to check: answers that print nothing, other calls on the same day, how complete the record is (“6 of 172 required questions answered”), and which reporting-tier agencies recorded nothing. Warnings never gate the export — the document always comes out."),
+     "The export step produces the FOUO Word document and, before it goes out, shows what to check: answers that print nothing because a detail is missing, how complete the record is (“162 of 172 required questions answered — 94%”), and any reporting agency with nothing recorded. Warnings never gate the export — the document always comes out."),
    T('assets/callnotes/cn-primer.webp','Before your first call','Before Your First Call',
-     "A short primer covering the seven places CallNotes deliberately doesn't behave like a blank Word document — nothing typed can be lost to the network, an unanswered question stays honestly blank rather than becoming a “No,” and amber means unfinished, not wrong. It's there so a new note-taker trusts the tool on a live call."),
+     "A short primer covering the seven places CallNotes deliberately doesn't behave like a Word document — nothing typed can be lost to the network, an unanswered question stays honestly blank rather than becoming a “No,” amber means unfinished rather than wrong, and derived answers can always be overruled."),
    T('assets/callnotes/cn-diagnostics.webp','Diagnostics and reliability','Diagnostics &amp; Reliability',
-     "Built for a live operational call, CallNotes carries its own diagnostics — the call and session IDs, the sync phase and queue, the last error, and a log of recent API calls with their timings — alongside a one-sentence “Report a problem” that already knows where you are. The reliability work that lets someone depend on it while a hazard is escalating."),
+     "Built for a live operational call, CallNotes carries its own diagnostics — call and session IDs, sync phase and queue, the last error, and recent API calls with their timings — alongside a one-sentence “Report a problem” that already knows where you are. It's the reliability work that lets someone depend on the tool while a hazard is escalating."),
  ],
 
  'quicklook': [

@@ -8,7 +8,7 @@ behavior — so the site keeps working while detail pages are built out.
 
 Run:  python3 tools/build_site.py
 """
-import os, html
+import os, html, hashlib
 
 SRC = os.path.join(os.path.dirname(__file__), '..', 'src')
 
@@ -19,6 +19,15 @@ EXT = ('<svg class="ext" viewBox="0 0 16 16" width="13" height="13" aria-hidden=
 CHEV_R = ('<svg class="chev-r" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true">'
           '<path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" '
           'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+def asset(path):
+    """Asset URL with a content hash. Assets are served immutable with a 1-year
+    cache, so a re-captured screenshot must get a new URL or browsers keep the old one."""
+    try:
+        with open(os.path.join(SRC, path), 'rb') as f:
+            return f"{path}?v={hashlib.sha1(f.read()).hexdigest()[:8]}"
+    except OSError:
+        return path
 
 def links_html(links):
     parts = []
@@ -216,7 +225,7 @@ def home_tile(app):
         return f'''      <li class="tile" role="listitem">
         <a class="tile-link" href="{app['slug']}.html">
           <span class="tile-media">
-            <img src="{app['home_image']}" alt="{app['home_alt']}" width="1200" height="750" loading="eager" decoding="async" />
+            <img src="{asset(app['home_image'])}" alt="{app['home_alt']}" width="1200" height="750" loading="eager" decoding="async" />
           </span>
           <span class="tile-head">
             <span class="tile-kicker">{app['kicker']}</span>
@@ -232,7 +241,7 @@ def home_tile(app):
     return f'''      <li class="tile" role="listitem">
         <button class="tile-toggle" aria-expanded="false" aria-controls="panel-{app['slug']}" id="tab-{app['slug']}">
           <span class="tile-media">
-            <img src="{app['home_image']}" alt="{app['home_alt']}" width="1200" height="750" loading="eager" decoding="async" />
+            <img src="{asset(app['home_image'])}" alt="{app['home_alt']}" width="1200" height="750" loading="eager" decoding="async" />
           </span>
           <span class="tile-head">
             <span class="tile-kicker">{app['kicker']}</span>
@@ -294,15 +303,15 @@ def build_index():
 '''
 
 def subtile_html(t):
-    pdf_attr = f' data-pdf="{t["pdf"]}"' if t.get('pdf') else ''
+    pdf_attr = f' data-pdf="{asset(t["pdf"])}"' if t.get('pdf') else ''
     caption = t['title'].replace('<span aria-hidden="true">·</span>','·')
     # strip any tags from caption for the lightbox bar
     import re
     caption = re.sub('<[^>]+>','',caption)
     kind = f'<span class="kind">{t["kind"]}</span>' if t.get('kind') else ''
     return f'''      <li class="subtile" role="listitem">
-        <button class="subtile-view" data-full="{t['img']}" data-caption="{caption}"{pdf_attr}>
-          {kind}<img src="{t['img']}" alt="{t['alt']}" loading="eager" decoding="async" />
+        <button class="subtile-view" data-full="{asset(t['img'])}" data-caption="{caption}"{pdf_attr}>
+          {kind}<img src="{asset(t['img'])}" alt="{t['alt']}" loading="eager" decoding="async" />
         </button>
         <div class="subtile-body">
           <h2 class="subtile-title">{t['title']}</h2>

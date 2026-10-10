@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args:['--no-sandbox',`--proxy-server=${process.env.HTTPS_PROXY}`,'--ssl-version-max=tls1.2','--disable-http2']});
+const p=await (await b.newContext({viewport:{width:1440,height:900},ignoreHTTPSErrors:true})).newPage();
+await p.goto('https://callnotes.benjaminkrakauer.com/',{waitUntil:'domcontentloaded'}); await sleep(2500);
+await p.locator('#p').fill('NYCEM30'); await p.getByRole('button',{name:/enter/i}).click(); await sleep(5000);
+await p.getByPlaceholder('Jane Doe').fill('Ben Krakauer'); await sleep(500);
+await p.getByText('Show older calls').click().catch(()=>{}); await sleep(1500);
+await p.getByText(/^Show \d+ test calls?$/).first().click().catch(()=>{}); await sleep(1500);
+console.log(await p.evaluate(()=>{ const d=[...document.querySelectorAll('button')].find(b=>b.innerText.trim()==='Delete'); let r=d; for(let j=0;j<4;j++) r=r.parentElement; return r.outerHTML.slice(0,2500); }));
+await b.close();
