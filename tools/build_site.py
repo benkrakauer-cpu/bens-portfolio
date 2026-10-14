@@ -205,6 +205,20 @@ APPS = [
   'links':[{'href':'https://quicklook.benjaminkrakauer.com','label':'quicklook.benjaminkrakauer.com','note':'internal NYCEM tool'}],
   'tagline':'','subtiles':[],
  },
+ {
+  'slug':'workflows','kicker':'Workflows',
+  'headline':'Paper approvals, rebuilt as routed workflows',
+  'oneliner':'An internal NYCEM system for travel requests, expense reports, and Tasks &amp; Standards, with every approval routed and recorded.',
+  'home_image':'assets/images/workflows.webp',
+  'home_alt':'NYCEM Workflows — home page listing travel, expense, and performance-review workflows',
+  'story':("Asking to attend a conference, getting reimbursed, or signing a performance plan used to mean paper forms walked from desk to desk. "
+    "Workflows turns each into a routed request: the employee starts with whatever they have — a flyer, an invitation email, or a link — and AI fills in the "
+    "event details, quoting its source for each field so the employee can check it. The system works out the kind of trip, routes it through every required "
+    "approver (supervisor, division head, CFO, DHSES, City Hall, the Commissioner), and generates the City's forms as it goes. Admins configure routing and rates "
+    "without code, and every action lands in an audit trail."),
+  'links':[{'href':'https://workflows.benjaminkrakauer.com','label':'workflows.benjaminkrakauer.com','note':'internal NYCEM tool'}],
+  'tagline':'','subtiles':[],
+ },
 ]
 
 # Merge richer per-app sub-tile data + taglines from subtiles.py (single source)
