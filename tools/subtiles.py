@@ -37,6 +37,10 @@ TAGLINES = {
    ("QuickLook turns the material already collected for an event — sitreps, call notes, consult emails, leadership direction — into a two-page post-event "
     "summary. Email anything to it, and a Bedrock-backed pipeline reads the files, builds a timeline, drafts the sections, and asks about the gaps; a person "
     "reviews, reconciles comments, approves, and exports. A tour of the intake, the synthesis pipeline, and the review that produces the document. Built serverless on AWS."),
+ 'workflows':
+   ("An internal NYCEM system that replaces paper approval forms with routed requests — travel and conferences, expense reports, and Tasks &amp; Standards "
+    "and performance reviews. Employees start from a flyer, email, or link and AI drafts the details; the system routes each request through the right "
+    "approvers, generates the City's forms, and records every step. Shown with prototype test data."),
 }
 
 SUBTILES = {
@@ -231,4 +235,28 @@ SUBTILES = {
    T('assets/quicklook/ql-document.webp','Document preview and export','Document Preview &amp; Export',
      "The live preview renders the actual post-event summary — “Testing 1-2-3 brought coastal storm conditions to New York City… producing 3.16 inches of rain… 437 FloodNet sensors monitored live” — across Page 1, Page 2, and an annex. It exports to PDF or Word, carrying a DRAFT watermark until every section is approved."),
  ],
+ 'workflows': [
+   T('assets/workflows/wf-home.webp','Workflows home','Home',
+     "One front door for the agency's paperwork: travel and conferences, expense reports, and Tasks &amp; Standards and performance reviews are live, with procurement, hiring, IT and cybersecurity reviews, meeting requests, and speaker requests planned. Below, each person sees what's waiting on them and where their own requests stand."),
+   T('assets/workflows/wf-wiz-start.webp','Start with what you have','Start With What You Have',
+     "A travel request starts from whatever the employee already has: drop in a flyer, a Word or PDF invitation, or a saved email, paste a link to the event page, or paste the text of an invitation. Approvers' expected documents — like the agenda — are listed up front, and anything missing can be added later."),
+   T('assets/workflows/wf-wiz-filled.webp','AI-filled event details','AI-Drafted Event Details',
+     "After reading the event page, the AI filled in 14 of 17 fields — and under each one it quotes the exact line it came from, so the employee checks the draft instead of retyping it. Anything it couldn't find is flagged rather than guessed."),
+   T('assets/workflows/wf-travel-route.webp','Where your request is','Approval Routing',
+     "Every request shows exactly where it is. This conference trip runs nine steps — supervisor, division head, Learning and Development, the CFO, a DHSES sign-off and a City Hall check running in parallel, the First Deputy Commissioner, the Commissioner, and the Travel Coordinator — worked out from the employee's answers about the trip."),
+   T('assets/workflows/wf-summary-pdf.webp','Travel request summary PDF','Request Summary <span aria-hidden="true">·</span> PDF',
+     'The request summary generated at submission: the event, trip classification, itemized costs and funding (here a federal UASI grant), the justification the AI drafted and the employee confirmed, the grant questions, and a history in which each entry is chained to the one before it. City and state forms are generated the same way at the steps that need them. <a href="assets/workflows/travel-request-summary.pdf" target="_blank" rel="noopener">Open the PDF →</a>',
+     pdf='assets/workflows/travel-request-summary.pdf', kind='PDF'),
+   T('assets/workflows/wf-expense-claim.webp','Expense report','Expense Reports',
+     "Reimbursements itemize each receipt with vendor, category, and the sales tax it included, total against any advances, and route through supervisor, budget, the CFO, and Finance. The reimbursement form is generated at submission and signed at the CFO step; the home address is shown only to the employee and the CFO's office."),
+   T('assets/workflows/wf-all-requests.webp','All requests','All Requests',
+     "An admin-only view of every request across the agency, filterable by workflow, status, office, and policy flags — hotel over the GSA rate, sales tax charged, short notice, filed late, federal grant. Simply opening this page, and every export from it, is recorded in the audit trail."),
+   T('assets/workflows/wf-dashboard.webp','Dashboard','Dashboard',
+     "Fiscal-year dashboards per workflow: approval and denial rates, median time to approval, items waiting more than five business days, total and City cost, requests by status, and where open requests are sitting. A Tasks &amp; Standards view shows, division by division, where every employee's plan and annual review stand."),
+   T('assets/workflows/wf-admin-routing.webp','Admin routing','Admin — Routing',
+     "Approval chains are configuration, not code: each workflow is a versioned list of stages, who acts at each one, and the rules for when a step applies. Changing who approves what doesn't need a developer."),
+   T('assets/workflows/wf-admin-rates.webp','Admin rates and settings','Admin — Rates &amp; Settings',
+     "The numbers the policies run on — the IRS mileage rate, travel-day meal rules, the conference-hotel limit as a share of the GSA rate, reminder timing — are kept as effective-dated values, so a new rate takes over on its date and past requests keep the rate they were filed under."),
+ ],
 }
+
